@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.oracle.s20210904.comm.model.Scrap;
-import com.oracle.s20210904.sy.dao.WkScrapDao;
+import com.oracle.s20210904.wk.dao.WkScrapDao;
 
 @Service
 public class WkScrapServiceImpl implements WkScrapService{
