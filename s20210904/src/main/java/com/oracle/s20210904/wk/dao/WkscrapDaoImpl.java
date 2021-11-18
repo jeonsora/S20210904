@@ -1,4 +1,4 @@
-package com.oracle.s20210904.sy.dao;
+package com.oracle.s20210904.wk.dao;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class WkscrapDaoImpl implements WkScrapDao{
 		System.out.println("WkscrapDaoImpl listScrap()");
 		List<Scrap> result = null;
 		try {
-			result=session.selectList("scrapSelectAll2");
+			result=session.selectList("scrapSelectAll");
 		} catch (Exception e) {
 			System.out.println("WkscrapDaoImpl listScrap() error : "+e.getMessage());
 		}
