@@ -45,7 +45,7 @@ mybatis:
   type-aliases-package: com.oracle.s20210904.model
   # XML Location
   config-location: classpath:configuration.xml
-  mapper-locations: classpath:mappers/*.xml
+  mapper-locations: classpath:mappers/**/*.xml
    
       
       
