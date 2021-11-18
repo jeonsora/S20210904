@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ApplyDao">
+	<select id="applySelectAll" resultType="Apply">
+		select * from apply order by user_id
+	</select>
+	
+	<select id="applySelectOne" parameterType="Apply" resultType="Apply">
+		select * from apply 
+		where user_id=#{user_id}
+		and res_code=#{res_code}
+		and anno_code=#{anno_code}
+	</select>
+</mapper>

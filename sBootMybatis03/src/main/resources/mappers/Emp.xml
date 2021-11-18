@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="EmpDao">
+	<select id="tkEmpTotal" resultType="int">
+		select count(*) FROM emp
+	</select>
+
+	<select id="tkEmpListAll" parameterType="Emp" resultType="Emp">
+		select *
+		from 
+    		(select rownum rn, a.*
+    		from (select * from emp order by empno) a) b
+		where rn between #{start} and #{end}
+		<!-- where empno=#{empno} --> 
+	</select>
+	
+	<select id="tkEmpListAll2" parameterType="Emp" resultType="Emp">
+		<![CDATA[
+         select * 
+         from (select rownum rn, a.* 
+               from (select * from emp order by empno) a
+              ) 
+    	 where rn >= #{start} 
+    	 and   rn <= #{end}    
+     	]]>
+	</select>
+	
+	<select id="tkEmpSelOne" parameterType="int" resultType="Emp">
+		select * from emp where empno=#{empno}
+	</select>
+	
+	<insert id="tkEmpWrite" parameterType="Emp">
+		insert into emp values(#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}, #{deptno})
+	</insert>
+	
+	<update id="tkEmpUpdate" parameterType="Emp" >
+		update emp set deptno=#{deptno}, ename=#{ename}, job=#{job}, 
+			mgr=#{mgr}, hiredate=#{hiredate}, sal=#{sal}, comm=#{comm} 
+		where empno=#{empno}
+	</update>
+	
+	<delete id="tkEmpDelete" parameterType="int">
+		delete from emp where empno=#{empno}
+	</delete>
+	
+	<select id="tkEmpListManager" parameterType="Emp" resultType="Emp">
+		select * from emp where empno in(select mgr from emp)
+	</select>
+
+<!-- INSERT ALL
+WHEN  height > 170 Then
+      INTO  height_info VALUES(studNo , name ,height)
+WHEN  weight > 70 Then
+      INTO  weight_info VALUES(studNo , name ,weight)
+SELECT studno , name , height , weight
+FROM   student
+WHERE  grade >= '2'; 여러개행 insert넣기 -->
+
+</mapper>
