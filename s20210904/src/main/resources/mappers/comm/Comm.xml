@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CommDao">
+	<select id="commSelectAll" resultType="Comm">
+		select * from comm order by main_cat, sub_cat
+	</select>
+	
+	<select id="commSelectOne" parameterType="Comm" resultType="Comm">
+		select * from comm 
+		where main_cat=#{main_cat}
+		and sub_cat=#{sub_cat}
+	</select>
+	
+<!-- 	<insert id="commInsert" parameterType="Comm">
+		insert into comm
+		values()
+	</insert> -->
+</mapper>
