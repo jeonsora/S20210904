@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+
+#body{
+	display: flex;
+	height:1000px;	
+}
+
+#nav{
+	display: flex;
+	flex-direction: column;
+	background-color: yellow;
+	width:15%;
+	height: 1000px;
+	font-size: 30px;
+	align-items: center;
+}
+#nav>span{
+	margin:20px;
+}
+
+#board {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#board>div{
+	
+	flex: 1 1 40%;
+}
+
+#board1{
+	background-color : red;
+}
+#board2{
+	background-color : blue;
+}
+#board3{
+	background-color : green;
+}
+#board4{
+	background-color : black;
+}

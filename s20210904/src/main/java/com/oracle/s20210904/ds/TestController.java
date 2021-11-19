@@ -12,6 +12,16 @@ public class TestController {
 		return "testForm";
 	}
 	
+	@GetMapping(value="AdminMain")
+	public String AdminMain() {
+		return "AdminMain";
+	}
+	
+	@GetMapping(value="header")
+	public String header() {
+		return "header";
+	}
+	
 	@GetMapping(value="test")
 	public String test(String id,Model model) {
 		String id2 = id;
