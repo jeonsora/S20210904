@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BookmarkDao">
+	<select id="bookmarkSelectAll" resultType="Bookmark">
+		select * from bookmark order by com_id, user_id
+	</select>
+	
+	<select id="bookmarkSelectOne" parameterType="Bookmark" resultType="Bookmark">
+		select * from bookmark 
+		where com_id=#{com_id}
+		and user_id=#{user_id}
+	</select>
+</mapper>

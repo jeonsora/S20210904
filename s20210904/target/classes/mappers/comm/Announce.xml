@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AnnounceDao">
+	<select id="announceSelectAll" resultType="Announce">
+		select * from announce order by anno_code
+	</select>
+	
+	<select id="announceSelectOne" parameterType="Announce" resultType="Announce">
+		select * from announce 
+		where anno_code=#{anno_code}
+	</select>
+</mapper>

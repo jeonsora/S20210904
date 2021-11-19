@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="Announce" type="com.oracle.s20210904.comm.model.Announce"/>
+		<typeAlias alias="Apply" type="com.oracle.s20210904.comm.model.Apply"/>
+		<typeAlias alias="Board" type="com.oracle.s20210904.comm.model.Board"/>
+		<typeAlias alias="Bookmark" type="com.oracle.s20210904.comm.model.Bookmark"/>
+		<typeAlias alias="Comm" type="com.oracle.s20210904.comm.model.Comm"/>
+		<typeAlias alias="Company" type="com.oracle.s20210904.comm.model.Company"/>
+		<typeAlias alias="Notice" type="com.oracle.s20210904.comm.model.Notice"/>
+		<typeAlias alias="Post" type="com.oracle.s20210904.comm.model.Post"/>
+		<typeAlias alias="Resume" type="com.oracle.s20210904.comm.model.Resume"/>
+		<typeAlias alias="ResumeContect" type="com.oracle.s20210904.comm.model.ResumeContect"/>
+		<typeAlias alias="ResumeDetail" type="com.oracle.s20210904.comm.model.ResumeDetail"/>
+		<typeAlias alias="Scrap" type="com.oracle.s20210904.comm.model.Scrap"/>
+		<typeAlias alias="User" type="com.oracle.s20210904.comm.model.User"/>
+	</typeAliases>
+</configuration>

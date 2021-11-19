@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 11
+Implementation-Title: s20210904
+Implementation-Version: version 1.0
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ResumeDetailDao">
+	<select id="resumeDetailSelectAll" resultType="ResumeDetail">
+		select * from resumeDetail
+	</select>
+	
+	<select id="resumeDetailSelectOne" parameterType="ResumeDetail" resultType="ResumeDetail">
+		select * from resumeDetail 
+		where user_id=#{user_id}
+		and res_code=#{res_code}
+		and car_code=#{car_code}
+	</select>
+</mapper>
