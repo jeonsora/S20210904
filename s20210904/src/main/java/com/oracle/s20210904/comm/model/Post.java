@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Post {
-	private String post_code;
+	private int post_code;
 	private String brd_code;
 	private String user_id;
 	private String post_title;
@@ -17,9 +17,6 @@ public class Post {
 	private int post_view;
 	private String post_file;
 	private String post_img;
-	private String post_tag1;
-	private String post_tag2;
-	private String post_tag3;
 	private int ref;
 	private int ref_lev;
 	private int ref_step;
