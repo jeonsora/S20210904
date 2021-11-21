@@ -1,43 +1,73 @@
 @charset "UTF-8";
 
 
-#body{
-	display: flex;
-	height:1000px;	
+#alram{
+	display:flex;
+	width:100%;
+	height:50px;
+	background-color: #ffa80c;
+	font-size: 15px;
 }
 
-#nav{
+#alram_btn{
+	margin: auto;
+}
+
+#alram>img{
+	margin-left: 15px;
+
+}
+#body {
+	display: flex;
+}
+
+#nav {
 	display: flex;
 	flex-direction: column;
-	background-color: yellow;
-	width:15%;
+	background-color: #ffd83c;
+	width: 15%;
 	height: 1000px;
-	font-size: 30px;
+	font-size: 25px;
 	align-items: center;
 }
-#nav>span{
-	margin:20px;
+
+#nav>span {
+	margin: auto;
 }
 
-#board {
+#adminBoard {
+	width:85%;
+	height:1000px;
 	display: flex;
 	flex-wrap: wrap;
+	margin: auto;
 }
 
-#board>div{
-	
-	flex: 1 1 40%;
+#box1{
+	display: flex; 
+	flex-direction: column;
+	border:1px solid black;
+	width:49%;
+	height:500px;
 }
 
-#board1{
-	background-color : red;
+#box1>ul{
+    display: flex;
+    margin: 10%;
+    justify-content: space-between;
 }
-#board2{
-	background-color : blue;
+
+#box1 > table{
+    border: 1px solid #444444;
+    margin-left: 10% !important;
+    margin-right: 10% !important;
 }
-#board3{
-	background-color : green;
+
+#box1 >tr,th, td {
+	padding:10px !important;
+    border: 1px solid black !important;
 }
-#board4{
-	background-color : black;
+#title{
+	background-color: gray;
 }
+ 
