@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="css/admin.css" type="text/css">
+<link rel="stylesheet" href="css/ds/admin.css" type="text/css">
 <link rel="stylesheet" href="css/reset.css" type="text/css">
 <title>Insert title here</title>
 </head>
