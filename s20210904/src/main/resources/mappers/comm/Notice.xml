@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="ApplyDao">
-	<select id="applySelectAll" resultType="Apply">
-		select * from apply order by ntc_code
+<mapper namespace="NoticeDao">
+	<select id="noticeSelectAll" resultType="Notice">
+		select * from notice order by ntc_code
 	</select>
 	
-	<select id="applySelectOne" parameterType="Apply" resultType="Apply">
-		select * from apply 
+	<select id="noticeSelectOne" parameterType="Notice" resultType="Notice">
+		select * from notice 
 		where ntc_code=#{ntc_code}
 	</select>
 </mapper>

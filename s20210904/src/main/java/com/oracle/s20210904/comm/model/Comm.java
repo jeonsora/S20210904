@@ -8,5 +8,5 @@ import lombok.Setter;
 public class Comm {
 	private String main_cat;
 	private String sub_cat;
-	private String col3;
+	private String comm_ctx;
 }

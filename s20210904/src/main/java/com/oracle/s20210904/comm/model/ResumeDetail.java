@@ -23,9 +23,9 @@ public class ResumeDetail implements Serializable{
 	@Id
 	private String user_id;
 	@Id
-	private String res_code;
+	private int res_code;
 	@Id
-	private String car_code;
+	private int car_code;
 	private String com_name;
 	private String emp_date;
 	private String emp_dept;
