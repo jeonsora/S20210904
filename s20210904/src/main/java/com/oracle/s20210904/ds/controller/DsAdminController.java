@@ -1,11 +1,11 @@
-package com.oracle.s20210904.ds;
+package com.oracle.s20210904.ds.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class TestController {
+public class DsAdminController {
 	
 	@GetMapping(value="testForm")
 	public String testForm() {
