@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,11 +15,17 @@
 
 		<div id="nav">
 			<div id="alram">
-				<span id="alram_btn"><img src="#"><a>미답변</a>&nbsp;&nbsp;<img
-					src="#"><a>미승인</a></span>
+				<span id="alram_btn">
+					<img src="#"><a href="#">미답변</a>&nbsp;&nbsp;
+					<img src="#"><a href="#">미승인</a>
+				</span>
 			</div>
-			<img src="#"> <span>대시보드</span> <span>회원관리</span> <span>기업관리</span>
-			<span>태그관리</span> <span>게시판관리</span>
+			<a href="#" id="logo"><img src="images/logo.png" width="100%" height="50px"></a> 
+			<a href="#"><span>대시보드</span></a>
+			<a href="#"><span>회원관리</span></a> 
+			<a href="#"><span>기업관리</span></a> 
+			<a href="#"><span>태그관리</span></a>
+			<a href="#"><span>게시판관리</span></a> 
 		</div>
 		<div id="adminBoard">
 			<div id="box1" class="QnA">
@@ -89,8 +94,8 @@
 					
 					<c:forEach var="i" begin="0" end="4">
 					<tr>
-						<td>중앙테크 <input type="button" value="확인">
-								 <input type="button" value="취소"></td>
+						<td>중앙테크 <input type="button" value="확인" id="confirm">
+								  <input type="button" value="취소"></td>
 					</tr>
 					</c:forEach>
 

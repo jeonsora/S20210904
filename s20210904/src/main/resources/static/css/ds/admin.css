@@ -31,9 +31,15 @@
 	align-items: center;
 }
 
-#nav>span {
-	margin: auto;
+#logo{
+	margin: 10% auto !important;
 }
+
+#nav>a {
+	margin: 30% auto !important;
+}
+
+
 
 #adminBoard {
 	width:85%;
