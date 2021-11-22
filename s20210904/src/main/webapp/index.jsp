@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%response.sendRedirect("testForm"); %>
+	<%
+	//response.sendRedirect("testForm"); 
+	response.sendRedirect("DjAnnoWrite"); 
+		
+	%>
 </body>
 </html>
