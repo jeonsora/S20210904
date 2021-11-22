@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/header.css" type="text/css">
 <link rel="stylesheet" href="css/reset.css" type="text/css">
-<title>Insert title here</title>
 </head>
 <header>
 <div id="container">
@@ -13,39 +14,30 @@
 		<div class="nav">
 			<!--Logo Section -->
 			<div class="nav_logo">
-				<a href="">코딩몬</a>
+				<a href="#"><img src="images/logo.png" width="50px" height="50px"></a>
 			</div>
-			<!--Menu Section -->
-			<ul class="nav_menu">						
-				<li><a href="">채용 공고</a></li>										
-				<li><a href="">글쓰기</a></li>										
-				<li><a href="">로그인</a></li>													
-			</ul>		
 			<!-- Search Section -->
 			<form action="">
 				<div class="search">
 				<select class="search-cate" name="searchCate" size="1">
-					<!-- <option value="announce">공고</option>
-						<option value="board">게시판</option> -->
+					    <option value="announce">공고</option>
+						<option value="board">게시판</option>
 				</select> 
 					<input type="text" class="search-content" name="searchContent" placeholder="검색어 입력" required="required">
 				</div>
 			</form>
+			<!--Menu Section -->
+			<ul class="nav_menu">						
+				<li><a href="">회원가입</a></li>																				
+				<li><a href="">로그인</a></li>													
+			</ul>		
 		</div>
-	</div>
-<section>
-</section>	
-	<!-- Footer Section -->
-	<div class="footer">
-		<nav>
-        <a href="" target=''>회사 소개</a> |
-        <a href="" target=''>고객센터</a>
-    </nav>
-    <p>
-        <span>@2021 codingmon</span><br/>
-        <span>쿠키</span><br/>
-        <span>개인정보 취급방침</span>
-    </p>
+		<div class="nav2">
+			<ul class="nav_menu2">						
+				<li><a href="">채용정보</a></li>																				
+				<li><a href="">게시판</a></li>													
+			</ul>	
+		</div>
 	</div>
 </div>
 </header>
