@@ -3674,3 +3674,12 @@ Caused by: java.lang.NoSuchMethodException: org.springframework.context.annotati
 	at java.base/java.lang.Class.getDeclaredMethod(Class.java:2476)
 	at org.springframework.core.annotation.AnnotationUtils$AliasDescriptor.<init>(AnnotationUtils.java:2121)
 	... 22 more
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-22 19:37:46.002
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-22 19:37:46.003
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-22 19:37:46.004
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT

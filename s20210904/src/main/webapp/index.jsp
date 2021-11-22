@@ -9,8 +9,8 @@
 <body>
 	<%
 	//response.sendRedirect("testForm"); 
-	response.sendRedirect("DjAnnoWrite"); 
-		
+	//response.sendRedirect("DjAnnoWrite"); 
+	response.sendRedirect("AdminMain"); 	
 	%>
 </body>
 </html>
