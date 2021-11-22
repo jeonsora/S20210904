@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/header.css" type="text/css">
 <link rel="stylesheet" href="css/reset.css" type="text/css">
-<title>Insert title here</title>
 </head>
 <header>
 <div id="container">
