@@ -13,4 +13,6 @@ public interface DjAnnoService {
 
 	List<Comm> mainCatList2();
 
+	List<Comm> mainCatList();
+
 }

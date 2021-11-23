@@ -33,7 +33,7 @@ public class DjAnnoDaoImpl implements DjAnnoDao {
 
 	@Override
 	public List<Comm> mainCatList1() {
-		System.out.println("DjAnnoDaoImpl의 mainCatList 시작되었습니다.");
+		System.out.println("DjAnnoDaoImpl의 mainCatList1 시작되었습니다.");
 		List<Comm> mainCat001 = null;
 		
 		try {
@@ -51,7 +51,7 @@ public class DjAnnoDaoImpl implements DjAnnoDao {
 
 	@Override
 	public List<Comm> mainCatList2() {
-		System.out.println("DjAnnoDaoImpl의 mainCatList 시작되었습니다.");
+		System.out.println("DjAnnoDaoImpl의 mainCatList2 시작되었습니다.");
 		List<Comm> mainCat002 = null;
 		
 		try {
@@ -65,6 +65,24 @@ public class DjAnnoDaoImpl implements DjAnnoDao {
 		
 		
 		return mainCat002;
+	}
+
+	@Override
+	public List<Comm> mainCatList() {
+		System.out.println("DjAnnoDaoImpl의 mainCatList 시작되었습니다.");
+		List<Comm> mainCat = null;
+		
+		try {
+			mainCat = session.selectList("DjJobTect");
+			
+			
+		} catch (Exception e) {
+			System.out.println("DjAnnoDaoImpl의 mainCatList에서 예외 발생!->"+e.getMessage());
+		}
+		
+		
+		
+		return mainCat;
 	}
 	
 	

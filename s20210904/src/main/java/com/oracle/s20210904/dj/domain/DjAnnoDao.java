@@ -13,4 +13,6 @@ public interface DjAnnoDao {
 
 	List<Comm> mainCatList2();
 
+	List<Comm> mainCatList();
+
 }
