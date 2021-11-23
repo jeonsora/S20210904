@@ -1,11 +1,36 @@
 package com.oracle.s20210904.ds.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.oracle.s20210904.comm.model.Company;
+import com.oracle.s20210904.comm.model.Post;
 
 @Repository
 public class DsAdminDaoImpl implements DsAdminDao {
 	@Autowired
 	SqlSession session;
+	
+	@Override 
+	public List<Company> getWaitCompany() {
+		List<Company> waitComList = session.selectList("DsWaitComList");
+		return waitComList;
+	}
+	
+	@Override
+	public int joinConfirm(String com_id) {
+		int result = session.update("DsJoinConfirm",com_id);
+		System.out.println("result->"+result);
+		
+		return result;
+	}
+	
+	@Override
+	public List<Post> getQnaList() {
+		List<Post> qnaList = session.selectList("DsQnaList");
+		return qnaList;
+	}
 }
