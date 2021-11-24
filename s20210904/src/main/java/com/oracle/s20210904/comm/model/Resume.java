@@ -1,16 +1,30 @@
 package com.oracle.s20210904.comm.model;
 
+import java.io.Serializable;
 import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Resume {
+@Entity(name = "Resume")
+@IdClass(Resume.class)
+public class Resume implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
 	private String user_id;
+	@Id
 	private int res_code;
 	private String res_sts;
+	private String res_title;
 	private String rep_res;
 	private String res_email;
 	private String res_img;

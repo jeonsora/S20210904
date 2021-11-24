@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ApplyDao">
+	<select id="WkApplycount" resultType="Applycount" parameterType="String">
+		select count(*) as countall,
+        	count(case when app_sts='001' then 1 end) as applying, 
+        	count(case when app_sts='002' then 1 end) as passdoc,
+        	count(case when app_sts='003' then 1 end) as failed,
+        	count(case when app_sts='004' then 1 end) as pass
+		from apply where user_id = #{mbid}
+	</select>
+	
+	
+</mapper>
