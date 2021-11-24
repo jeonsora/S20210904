@@ -55,6 +55,22 @@
 	height:500px;
 }
 
+.announceCount > ul{
+	display: flex;
+    margin: 5% 10%;
+    justify-content: space-between;
+}
+.chart{
+	width:400px;
+	height:300px;
+	margin:auto;
+}
+#myChart{
+	margin-top:auto;
+	margint-left:auto;
+	margint-right:auto;
+}
+
 .QnA{
 	display: flex; 
 	flex-direction: column;

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.ds.dao.DsAdminDao;
+import com.oracle.s20210904.ds.model.AnnounceCnt;
 
 @Service
 public class DsAdminServiceImpl implements DsAdminService {
@@ -31,6 +32,12 @@ public class DsAdminServiceImpl implements DsAdminService {
 	public List<Post> getQnaList() {
 		List<Post> qnaList = dsAdminDao.getQnaList();
 		return qnaList;
+	}
+	
+	@Override
+	public List<AnnounceCnt> announceCnt() {
+		List<AnnounceCnt> annCntList= dsAdminDao.announceCnt();
+		return annCntList;
 	}
 	
 }

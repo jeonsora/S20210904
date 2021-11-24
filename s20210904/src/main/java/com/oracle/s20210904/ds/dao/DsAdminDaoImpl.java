@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
+import com.oracle.s20210904.ds.model.AnnounceCnt;
 
 @Repository
 public class DsAdminDaoImpl implements DsAdminDao {
@@ -32,5 +33,11 @@ public class DsAdminDaoImpl implements DsAdminDao {
 	public List<Post> getQnaList() {
 		List<Post> qnaList = session.selectList("DsQnaList");
 		return qnaList;
+	}
+	
+	@Override
+	public List<AnnounceCnt> announceCnt() {
+		List<AnnounceCnt> annCntList= session.selectList("DsAnnounceCnt");
+		return annCntList;
 	}
 }
