@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PostDao">
+	<!-- <select id="postSelectAll" resultType="Post">
+		select * from post order by post_code
+	</select>
+	
+	<select id="postSelectOne" parameterType="Post" resultType="Post">
+		select * from post 
+		where post_code=#{post_code}
+	</select> -->
+	
+	<insert id="postInsert">
+		insert into
+		post(
+			post_title
+			, post_ctx
+			, post_regdate
+		values(
+		#{post_title}
+			, #{post_ctx}
+			, #{user_id}
+			, now()
+	</insert>
+	
+	<update id="postUpdate">
+		update post set
+		post_title = #{post_title}
+			, post_ctx = #{post_ctx}
+			, user_id = #{user_id}
+			, post_regdate = now()
+			
+		where
+			post_code = #{post_code}
+	</update>
+	
+	<delete id="postDelete">
+		delete from post
+		where
+			post_code = #{post_code}
+	</delete>
+	
+</mapper>
