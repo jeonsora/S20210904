@@ -8,5 +8,6 @@
 </head>
 <body>
 	<%response.sendRedirect("AdminMain"); %>
+<%-- 	<%response.sendRedirect("CompanyMypage"); %> --%>
 </body>
 </html>

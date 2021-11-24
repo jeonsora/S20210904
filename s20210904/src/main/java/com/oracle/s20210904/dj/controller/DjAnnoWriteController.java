@@ -94,8 +94,7 @@ public class DjAnnoWriteController {
 //			}
 		
 		//3. 가장 진보된 방법 - 람다식 사용 
-		  Map<Boolean, List<Comm>> jobTechTotal = jobTech12.stream()
-			        .collect(Collectors.groupingBy(e -> "001".equals(e.getMain_cat())));
+		  Map<Boolean, List<Comm>> jobTechTotal = jobTech12.stream().collect(Collectors.groupingBy(e -> "001".equals(e.getMain_cat())));
 
 			    List<Comm> jobTech1 = jobTechTotal.get(true);
 			    List<Comm> jobTech2 = jobTechTotal.get(false);
