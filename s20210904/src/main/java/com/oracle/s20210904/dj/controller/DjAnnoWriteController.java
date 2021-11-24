@@ -119,6 +119,8 @@ public class DjAnnoWriteController {
 	
 	@PostMapping(value="DjAnnoWriting")
 	public String annoWriting() {
+		System.out.println("컨트롤러의 DjAnnoWriting 시작되었습니다");
+		
 		
 		return "redirect? forward??";
 	}
