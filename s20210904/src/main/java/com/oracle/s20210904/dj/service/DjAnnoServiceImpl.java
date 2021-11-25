@@ -47,6 +47,16 @@ public List<Comm> mainCatList2() {
 	return mainCat002;
 }
 
+@Override
+public List<Comm> mainCatList() {
+System.out.println("DjAnnoServiceImpl의 mainCatList 시작되었습니다.");
+	
+	List<Comm> mainCat = dad.mainCatList();
+	System.out.println("(서비스)리스트 mainCat에는 무엇이 들었나? ->"+mainCat.size());
+	
+	return mainCat;
+}
+
 
 	
 }

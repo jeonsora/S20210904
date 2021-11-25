@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DsAnnounce">
+	
+	<!-- QnA 게시글 목록 -->
+	<select id="DsAnnounceCnt" resultType="AnnounceCnt">
+		<![CDATA[
+		select a.*, c.comm_ctx job_name 
+		from (select * from comm where main_cat = '001') c, (select a.job_tag, count(job_tag) ann_cnt from announce a group by job_tag order by ann_cnt desc) a
+		where a.job_tag = c.sub_cat and rownum <= 5
+		]]>
+	</select>
+	
+</mapper>

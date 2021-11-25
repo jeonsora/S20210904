@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	  <%response.sendRedirect("join"); %> 
-	<%--  <%response.sendRedirect("loginForm"); %>  --%>
-	
+	<%response.sendRedirect("AdminMain"); %>
+<%-- 	<%response.sendRedirect("CompanyMypage"); %> --%>
 </body>
 </html>

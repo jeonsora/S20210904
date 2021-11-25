@@ -1,16 +1,20 @@
 package com.oracle.s20210904.dj.controller;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.oracle.s20210904.comm.model.Announce;
 import com.oracle.s20210904.comm.model.Comm;
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.dj.service.DjAnnoService;
+
 
 @Controller
 public class DjAnnoWriteController {
@@ -19,8 +23,8 @@ public class DjAnnoWriteController {
 	@Autowired
 	private DjAnnoService das;
 	
-	@RequestMapping("DjAnnoWrite")
-	public String annoWrite(String com_id,Announce anno, Model model) {
+	@RequestMapping("DjAnnoWriteForm")
+	public String annoWriteForm(String com_id,Announce anno, Model model) {
 		System.out.println("DjAnnoWriteController의 annoWrite 시작되었습니다.");
 		
 		com_id = "thsl90"; //공고 리스트와 잇기 전에 임시로 객체에 정보 넣기
@@ -28,38 +32,96 @@ public class DjAnnoWriteController {
 		Company compInfo = das.comInfoList(com_id);
 		System.out.println("여기는 컨트롤러 회사정보 가져왔니? 회사명은?->"+compInfo.getCom_id());
 		//-----------------------------------------
-		//직종과 기술스택 가져오기
-		List<Comm> jobTech1 = das.mainCatList1();
-		System.out.println("(컨트롤러)리스트 내용물 확인001->"+jobTech1.size());
-		List<Comm> jobTech2 = das.mainCatList2();
-		System.out.println("(컨트롤러)리스트 내용물 확인001->"+jobTech2.size());
-		
-		/*
-		 * List<Comm> jobTech001 = null; List<Comm> jobTech002 = null;
-		 */
+		//직종과 기술스택 가져오기 방법1 (가장 원시적인 방법 - 따로 가져오기)
+//		List<Comm> jobTech1 = das.mainCatList1();
+//		System.out.println("(컨트롤러)리스트 내용물 확인001->"+jobTech1.size());
+//		List<Comm> jobTech2 = das.mainCatList2();
+//		System.out.println("(컨트롤러)리스트 내용물 확인001->"+jobTech2.size());
 		
 		
+//		List<Comm> jobTech1 = null; 
+//		List<Comm> jobTech2 = null;
 		
-		/*
-		 * for(Comm comm : jobTech) {
-		 * 
-		 * if(comm.getMain_cat().contentEquals("001")) {
-		 * 
-		 * jobTech001.add(comm); } else if(comm.getMain_cat().content){
-		 * 
-		 * jobTech002.add(comm); }
-		 * 
-		 * }
-		 */
 		
-		System.out.println("jobTech1.size()->"+jobTech1.size());
-		//System.out.println("jobTech002.size()->"+jobTech002.size());
+		List<Comm> jobTech12 = das.mainCatList();
+		System.out.println("(컨트롤러)리스트 jobTech12에는 무엇이 들었나? ->"+jobTech12.size());
 		
+		
+//		jobTech1 = list.stream().filter(jobTech12 -> "001".equals(jobTech12.getMain_cat())).collect(Collectors.toList());
+//		jobTech2 = List.stream().filter(e -> "002".equals(e.getMain_cat())).collect(Collectors.toList());
+		
+	
+		
+			  //직종과 기술스택 가져오기 방법2 (list 하나로 갖고와서 향상된 forloop 혹은 while loop으로 나누기 - 제대로 작동이 안됨)
+
+//        String getMain_cat = "";
+//        String compStr001 = "001";
+//			//향상된 FOR LOOP 이용
+//		 for(Comm comm : jobTech12) {
+//			 System.out.println("for comm.getMain_cat()->"+comm.getMain_cat());
+//			 System.out.println("for comm.getSub_cat()->"+comm.getSub_cat());	
+//			 System.out.println("for comm.getComm_ctx()->"+comm.getComm_ctx());
+//			 System.out.println("---------------------");
+//			 getMain_cat = comm.getMain_cat();
+//			 System.out.println("for getMain_cat->"+getMain_cat);
+//			 
+//			  if(getMain_cat == "001"){
+//					 System.out.println("001 comm.getSub_cat()->"+comm.getSub_cat());
+//					 System.out.println("001 comm.getComm_ctx()->"+comm.getComm_ctx());
+//					 jobTech1.add(comm); 
+//			 
+//			  } else if(getMain_cat == "002"){
+//					 System.out.println("002 comm.getSub_cat()->"+comm.getSub_cat());
+//					 System.out.println("002 comm.getComm_ctx()->"+comm.getComm_ctx());
+//					 jobTech2.add(comm);
+//			 }
+		
+			 // switch 이용 
+				 
+//				 switch(getMain_cat) {
+//				 
+//				 case "001": 
+//					 jobTech1.add(comm); 
+//					 break;
+//				 case "002": 
+//					 jobTech2.add(comm); 
+//					 break;
+//				 default : 
+//					 System.out.println("뭔가 잘못됐는데?");
+//					 break;
+//				 
+//				 }
+//			}
+		
+		//3. 가장 진보된 방법 - 람다식 사용 
+		  Map<Boolean, List<Comm>> jobTechTotal = jobTech12.stream().collect(Collectors.groupingBy(e -> "001".equals(e.getMain_cat())));
+
+			    List<Comm> jobTech1 = jobTechTotal.get(true);
+			    List<Comm> jobTech2 = jobTechTotal.get(false);
+		//리스트를 맵 객체로 만든다? 받은 객체를 일단 게터를 이용해서 대분류가 001 이라는 문자를 갖고있는지 확인해서 분류한다.
+		//아랫줄에서  Map<진위여부,리스트객체> 이렇게 있을 것이다. 
+		//진위여부에 true를 입력하면 001로 분류된 것들이 jobTech1로 모이고 아니면 2로 모인다. 
+			        
+		 System.out.println("jobTech1의 길이"+jobTech1.size());
+		 System.out.println("jobTech2의 길이"+jobTech2.size());
+
+
 		
 		model.addAttribute("compInfo", compInfo);
 		model.addAttribute("jobTech1", jobTech1);
 		model.addAttribute("jobTech2", jobTech2);
+	
 		
 		return "dj/annoWrite";
 	}
+	
+	
+	@PostMapping(value="DjAnnoWriting")
+	public String annoWriting() {
+		System.out.println("컨트롤러의 DjAnnoWriting 시작되었습니다");
+		
+		
+		return "redirect? forward??";
+	}
+	
 }

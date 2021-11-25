@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DsCompany">
+	
+	<!-- 가입대기 기업 리스트 -->
+	<select id="DsWaitComList" resultType="Company">
+		SELECT * FROM company WHERE com_grade=0
+	</select>
+	
+	<!-- 가입 승인 -->
+	<update id="DsJoinConfirm" parameterType="String">
+		UPDATE company SET com_grade=1 WHERE com_id = #{com_id}
+	</update>
+
+</mapper>

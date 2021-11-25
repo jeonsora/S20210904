@@ -21,5 +21,12 @@
 		from comm
 		where main_cat = 002
 	</select>
+	
+	<select id="DjJobTect" resultType="Comm">
+		select *
+		from comm
+		where main_cat = 001 or
+		main_cat= 002
+	</select>
 
 </mapper>
