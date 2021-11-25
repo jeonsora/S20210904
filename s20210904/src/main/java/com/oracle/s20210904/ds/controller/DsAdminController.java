@@ -47,15 +47,24 @@ public class DsAdminController {
 	}
 	
 	@GetMapping(value="memberMenu")
-	public String memberMenu(Model model, String currentPage) {
-		List<Member> userList = dsAdminService.getUserList();
-		int mtotCnt = userList.size();
+	public String memberMenu(Member member, Model model, String currentPage) {
+		
+		int mtotCnt = dsAdminService.totCnt();
+		System.out.println("mtotCnt->"+mtotCnt);
+		
+		Paging pg = new Paging(mtotCnt,currentPage);
+		
+		member.setStart(pg.getStart());   // 1
+		member.setEnd(pg.getEnd());       // 10
+		System.out.println("getUserList Start... getStart->"+pg.getStart()+"getEnd->"+pg.getEnd());
+		List<Member> userList = dsAdminService.getUserList(member);
+		
 		System.out.println("userList.size()->"+userList.size());
-		System.out.println("userList.get(0).getUserId()->"+userList.get(0).getUser_id());
 
 		
 		model.addAttribute("mtotCnt",mtotCnt);
 		model.addAttribute("userList",userList);
+		model.addAttribute("pg",pg);
 		return "ds/memberMenu";
 	}
 	

@@ -15,6 +15,7 @@ public interface DsAdminDao {
 	List<Post> getQnaList();
 	List<AnnounceCnt> announceCnt();
 	List<Announce> getAnnounce();
-	List<Member> getUserList();
+	List<Member> getUserList(Member member);
+	int totCnt();
 
 }

@@ -141,10 +141,22 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin: auto;
-	justify-content: center;
-	align-item: center;
+	flex-direction: column;
 }
 .memberList{
 	width: 80%;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.pageBtn{
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.subject{
+	margin-top:10%;
+	margin-left: 10%;
+	margin-bottom: 10%;
+	font-size: 50px;
 }

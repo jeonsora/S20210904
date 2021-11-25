@@ -49,8 +49,14 @@ public class DsAdminServiceImpl implements DsAdminService {
 	}
 	
 	@Override
-	public List<Member> getUserList() {
-		List<Member> userList = dsAdminDao.getUserList();
+	public List<Member> getUserList(Member member) {
+		List<Member> userList = dsAdminDao.getUserList(member);
 		return userList;
+	}
+	
+	@Override
+	public int totCnt() {
+		int totCnt = dsAdminDao.totCnt();
+		return totCnt;
 	}
 }

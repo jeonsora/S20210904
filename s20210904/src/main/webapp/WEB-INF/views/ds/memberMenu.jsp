@@ -26,6 +26,7 @@
 			 	<a href="boardMenu"><span>게시판관리</span></a>
 		</div>
 		<div id="memberListbox" class="memberListbox" >
+				<span class="subject">회원관리</span>
 				<table class="memberList">
 					<tr class="title">
 						<th >아이디</th><th>이름</th><th></th>
@@ -41,16 +42,19 @@
 						</c:forEach>
 					</c:if>
 				</table>
-				
-				<c:if test="${pg.startPage > pg.pageBlock }">
-					<a href="empList?currentPage=${pg.startPage-pg.pageBlock}">[이전]</a>
-				</c:if>
-				<c:forEach var="i" begin="${pg.startPage}" end="${pg.endPage}">
-					<a href="empList?currentPage=${i}">[${i}]</a>
-				</c:forEach>
-				<c:if test="${pg.endPage < pg.totalPage }">
-					<a href="empList?currentPage=${pg.startPage+pg.pageBlock}">[다음]</a>
-				</c:if>
+				<ul class="pageBtn">
+					<li><c:if test="${pg.startPage > pg.pageBlock }">
+						<a href="memberMenu?currentPage=${pg.startPage-pg.pageBlock}">[이전]</a></c:if>
+					</li>
+					<li><c:forEach var="i" begin="${pg.startPage}" end="${pg.endPage}">
+						<a href="memberMenu?currentPage=${i}">[${i}]</a></c:forEach>
+					</li>
+					<li><c:if test="${pg.endPage < pg.totalPage }">
+						<a href="memberMenu?currentPage=${pg.startPage+pg.pageBlock}">[다음]</a></c:if>
+					</li>
+				</ul>
+
+
 		</div>
 	</div>
 </body>
