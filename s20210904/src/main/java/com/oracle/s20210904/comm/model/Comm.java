@@ -12,15 +12,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity(name = "Comm")
-@IdClass(Comm.class)
-public class Comm implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Comm{
 	@Id
 	private String main_cat;
-	@Id
+//	@Id 
 	private String sub_cat;
 	private String comm_ctx;
 }

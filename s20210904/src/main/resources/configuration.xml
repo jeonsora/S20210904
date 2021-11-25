@@ -14,7 +14,9 @@
 		<typeAlias alias="ResumeDetail" type="com.oracle.s20210904.comm.model.ResumeDetail"/>
 		<typeAlias alias="Scrap" type="com.oracle.s20210904.comm.model.Scrap"/>
 		<typeAlias alias="User" type="com.oracle.s20210904.comm.model.User"/>
-		<typeAlias alias="Applycount" type="com.oracle.s20210904.wk.model.Applycount"/>
+		<typeAlias alias="WkApplyCount" type="com.oracle.s20210904.wk.model.WkApplyCount"/>
+		<typeAlias alias="WkResume" type="com.oracle.s20210904.wk.model.WkResume"/>
+		<typeAlias alias="WkApply" type="com.oracle.s20210904.wk.model.WkApply"/>
 		
 	</typeAliases>
 </configuration>

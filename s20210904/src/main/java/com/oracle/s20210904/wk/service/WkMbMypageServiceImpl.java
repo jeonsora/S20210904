@@ -8,8 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.oracle.s20210904.comm.model.Resume;
 import com.oracle.s20210904.wk.dao.WkApplyDao;
+import com.oracle.s20210904.wk.dao.WkResumeDao;
 import com.oracle.s20210904.wk.dao.WkResumeRepository;
-import com.oracle.s20210904.wk.model.Applycount;
+import com.oracle.s20210904.wk.model.WkApply;
+import com.oracle.s20210904.wk.model.WkApplyCount;
+import com.oracle.s20210904.wk.model.WkResume;
 
 @Service
 @Transactional
@@ -17,6 +20,8 @@ public class WkMbMypageServiceImpl implements WkMbMypageService{
 
 	@Autowired
 	private WkApplyDao WkApplyDao;
+	@Autowired
+	private WkResumeDao wkResumeDao;
 	
 	private final WkResumeRepository WkResumeRepository;
 	@Autowired
@@ -28,15 +33,27 @@ public class WkMbMypageServiceImpl implements WkMbMypageService{
 
 
 	@Override
-	public List<Applycount> countApply(String mbid) {
+	public List<WkApplyCount> countApply(String mbid) {
 		return WkApplyDao.countApply(mbid);
 	}
 
 
 
+//	@Override
+//	public List<WkResume> resumeList(String mbid) {
+//		return WkResumeRepository.resumeList(mbid);
+//	}
+	
 	@Override
-	public List<Resume> resumeList(String mbid) {
-		return WkResumeRepository.resumeList(mbid);
+	public List<WkResume> resumeList(String mbid) {
+		return wkResumeDao.resumeList(mbid);
+	}
+
+
+
+	@Override
+	public List<WkApply> applyList(String mbid) {
+		return WkApplyDao.applyList(mbid);
 	}
 
 	

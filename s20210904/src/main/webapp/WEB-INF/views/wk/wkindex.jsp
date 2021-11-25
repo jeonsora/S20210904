@@ -14,7 +14,7 @@
 </form> -->
 
 	<input type="button" value="회원"
-		onclick="location.href='index2?memberid=dmdtla054'">
+		onclick="location.href='wkindex2?memberid=dmdtla054'">
 	
 </body>
 </html>

@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Applycount {
+public class WkApplyCount {
 
 	private int countall;
 	private int applying;
