@@ -9,8 +9,7 @@
 <body>
 
 <%-- 	<%response.sendRedirect("CompanyMypage"); %> --%>
-<%-- <%response.sendRedirect("AdminMain"); %> --%>
-	 <%response.sendRedirect("GmAnnoList"); %> 
+	 <%response.sendRedirect("AdminMain"); %> 
 	<%-- <%response.sendRedirect("DjAnnoWrite"); %> --%>
 
 </body>
