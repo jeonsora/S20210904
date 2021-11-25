@@ -15,6 +15,8 @@
 		<typeAlias alias="Scrap" type="com.oracle.s20210904.comm.model.Scrap"/>
 		<typeAlias alias="Member" type="com.oracle.s20210904.comm.model.Member"/>
 		<typeAlias alias="AnnounceCnt" type="com.oracle.s20210904.ds.model.AnnounceCnt"/>
-		
+		<typeAlias alias="User" type="com.oracle.s20210904.comm.model.User"/>
+		<typeAlias alias="ComAnnounce" type="com.oracle.s20210904.comm.model.ComAnnounce"/>
+
 	</typeAliases>
 </configuration>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="GmAnnoDao">
+	<select id="GmAnnoTotal" resultType="int">
+		select count(*) from announce
+	</select>
+
+	<select id="GmAnnoListAll" parameterType="ComAnnounce" resultType="ComAnnounce">
+		select *
+		from
+		(
+		  select rownum rn, a.*
+		  from (select a.anno_title, a.anno_code, a.anno_regdate, a.anno_c_regdate, a.rec_edu,
+                c.com_name
+          from announce a, company c
+         where a.com_id = c.com_id) a
+		)
+		where rn between #{start} and #{end}
+	</select>
+	
+	<select id="GmAnnoSelOne" parameterType="java.lang.String" resultType="ComAnnounce">
+		select * 
+		from announce a, company c
+		where a.com_id = c.com_id
+		and a.anno_code = #{a.anno_code}
+	</select>
+	
+	<select id="GmCommRecjob" parameterType="ComAnnounce" resultType="Comm">
+		select comm_ctx
+		from comm
+		where main_cat = 001
+		and sub_cat = #{com.job_tag}
+	</select>
+	
+	<select id="GmCommEmptype" resultType="Comm">
+		select comm_ctx
+		from comm
+		where main_cat = 071
+		and sub_Cat = 001
+	</select>
+	
+	
+	
+
+
+
+</mapper>
