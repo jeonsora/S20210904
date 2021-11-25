@@ -51,7 +51,7 @@ public class DsAdminDaoImpl implements DsAdminDao {
 	
 	@Override
 	public List<Member> getUserList() {
-		List<Member> userList = session.selectList("userSelectAll");
+		List<Member> userList = session.selectList("memberSelectAll");
 		return userList;
 	}
 }

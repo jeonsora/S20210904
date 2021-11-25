@@ -27,20 +27,30 @@
 		</div>
 		<div id="memberListbox" class="memberListbox" >
 				<table class="memberList">
-					<tr>
-						<th>아이디</th><th>이름</th><th></th>
+					<tr class="title">
+						<th >아이디</th><th>이름</th><th></th>
 					</tr>
 					<c:if test="${mtotCnt==0 }">
 						<tr><td>회원목록이 비어있어욤</td></tr>
 					</c:if>
 					<c:if test="${mtotCnt > 0 }">
-						<c:forEach var="userList" items="userList">
+						<c:forEach var="usList" items="${userList}">
 							<tr>
-								<td>${userList.user_id }</td><td>${userList.user_name }</td><td><input type="button" value="삭제"></td>
+								<td>${usList.user_id}</td><td>${usList.user_name}</td><td><input type="button" value="삭제"></td>
 							</tr>
 						</c:forEach>
 					</c:if>
 				</table>
+				
+				<c:if test="${pg.startPage > pg.pageBlock }">
+					<a href="empList?currentPage=${pg.startPage-pg.pageBlock}">[이전]</a>
+				</c:if>
+				<c:forEach var="i" begin="${pg.startPage}" end="${pg.endPage}">
+					<a href="empList?currentPage=${i}">[${i}]</a>
+				</c:forEach>
+				<c:if test="${pg.endPage < pg.totalPage }">
+					<a href="empList?currentPage=${pg.startPage+pg.pageBlock}">[다음]</a>
+				</c:if>
 		</div>
 	</div>
 </body>

@@ -13,6 +13,7 @@ import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.comm.model.Member;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
 import com.oracle.s20210904.ds.service.DsAdminService;
+import com.oracle.s20210904.ds.service.Paging;
 
 @Controller
 public class DsAdminController {
@@ -46,14 +47,17 @@ public class DsAdminController {
 	}
 	
 	@GetMapping(value="memberMenu")
-	public String memberMenu(Model model) {
+	public String memberMenu(Model model, String currentPage) {
 		
 		List<Member> userList = dsAdminService.getUserList();
 		int mtotCnt = userList.size();
+		System.out.println("userList.size()->"+userList.size());
+		System.out.println("userList.get(0).getUserId()->"+userList.get(0).getUser_id());
+		Paging pg = new Paging(mtotCnt, currentPage);
 		
 		model.addAttribute("mtotCnt",mtotCnt);
 		model.addAttribute("userList",userList);
-		
+		model.addAttribute("pg",pg);
 		return "ds/memberMenu";
 	}
 	
