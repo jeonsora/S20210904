@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.oracle.s20210904.comm.model.Announce;
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
-import com.oracle.s20210904.comm.model.User;
+import com.oracle.s20210904.comm.model.Member;
 import com.oracle.s20210904.ds.dao.DsAdminDao;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
 
@@ -49,8 +49,8 @@ public class DsAdminServiceImpl implements DsAdminService {
 	}
 	
 	@Override
-	public List<User> getUserList() {
-		List<User> userList = dsAdminDao.getUserList();
+	public List<Member> getUserList() {
+		List<Member> userList = dsAdminDao.getUserList();
 		return userList;
 	}
 }

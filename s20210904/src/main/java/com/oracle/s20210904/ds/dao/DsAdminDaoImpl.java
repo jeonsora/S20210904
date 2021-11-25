@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.oracle.s20210904.comm.model.Announce;
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
-import com.oracle.s20210904.comm.model.User;
+import com.oracle.s20210904.comm.model.Member;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
 
 @Repository
@@ -50,8 +50,8 @@ public class DsAdminDaoImpl implements DsAdminDao {
 	}
 	
 	@Override
-	public List<User> getUserList() {
-		List<User> userList = session.selectList("userSelectAll");
+	public List<Member> getUserList() {
+		List<Member> userList = session.selectList("userSelectAll");
 		return userList;
 	}
 }

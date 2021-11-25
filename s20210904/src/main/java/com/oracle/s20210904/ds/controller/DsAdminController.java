@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.oracle.s20210904.comm.model.Announce;
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
-import com.oracle.s20210904.comm.model.User;
+import com.oracle.s20210904.comm.model.Member;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
 import com.oracle.s20210904.ds.service.DsAdminService;
 
@@ -48,7 +48,7 @@ public class DsAdminController {
 	@GetMapping(value="memberMenu")
 	public String memberMenu(Model model) {
 		
-		List<User> userList = dsAdminService.getUserList();
+		List<Member> userList = dsAdminService.getUserList();
 		int mtotCnt = userList.size();
 		
 		model.addAttribute("mtotCnt",mtotCnt);
