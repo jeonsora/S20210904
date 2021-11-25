@@ -2,6 +2,7 @@ package com.oracle.s20210904.dj.domain;
 
 import java.util.List;
 
+import com.oracle.s20210904.comm.model.Announce;
 import com.oracle.s20210904.comm.model.Comm;
 import com.oracle.s20210904.comm.model.Company;
 
@@ -14,5 +15,7 @@ public interface DjAnnoDao {
 	List<Comm> mainCatList2();
 
 	List<Comm> mainCatList();
+
+	void annoWriting(Announce anno);
 
 }

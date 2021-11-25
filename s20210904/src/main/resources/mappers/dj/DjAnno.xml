@@ -25,8 +25,51 @@
 	<select id="DjJobTect" resultType="Comm">
 		select *
 		from comm
-		where main_cat = 001 or
-		main_cat= 002
+		where main_cat in (001,002,072)
+		
 	</select>
+	
+	<insert id="DjAnnoInsert" parameterType="Announce">
+		
+		insert into Announce(
+			anno_code,
+			com_id,
+			com_bus,
+			rec_vol,
+			rec_dtl,
+			emp_type,
+			career,
+			rec_edu,
+			pay_info,
+			work_cdt,
+			etc_cdt,
+			job_tag,
+			tech_tag1,
+			tech_tag2,
+			anno_regdate,
+			anno_title
+		)
+		
+		values(
+			ann_seq.nextval,
+			#{com_id},
+			#{com_bus},
+			#{rec_vol},
+			#{rec_dtl},
+			#{emp_type},
+			#{career},
+			#{rec_edu},
+			#{pay_info},
+			#{work_cdt},
+			#{etc_cdt},
+			#{job_tag},
+			#{tech_tag1},
+			#{tech_tag2},
+			#{anno_regdate},
+			#{anno_title}
+		)
+		
+	
+	</insert>
 
 </mapper>

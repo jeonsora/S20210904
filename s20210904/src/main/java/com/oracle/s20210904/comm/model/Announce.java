@@ -10,13 +10,12 @@ import lombok.Setter;
 public class Announce {
 	private String anno_code;
 	private String com_id;
-	private String work_code;
-	private String rec_job;
+	private String com_bus;
 	private int    rec_vol;
 	private String rec_dtl;
 	private int    emp_type;
-	private String tech_stk;
 	private String career;
+	private String rec_edu;
 	private int pay_info;
 	private String work_cdt;
 	private String etc_cdt;

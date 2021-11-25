@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.oracle.s20210904.comm.model.Announce;
 import com.oracle.s20210904.comm.model.Comm;
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.dj.domain.DjAnnoDao;
@@ -55,6 +56,14 @@ System.out.println("DjAnnoServiceImpl의 mainCatList 시작되었습니다.");
 	System.out.println("(서비스)리스트 mainCat에는 무엇이 들었나? ->"+mainCat.size());
 	
 	return mainCat;
+}
+
+@Override
+public void annoWriting(Announce anno) {
+	System.out.println("DjAnnoServiceImpl의 annoWriting 시작했습니다.");
+	
+	dad.annoWriting(anno);
+	
 }
 
 

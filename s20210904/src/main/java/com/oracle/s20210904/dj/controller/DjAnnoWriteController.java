@@ -98,19 +98,29 @@ public class DjAnnoWriteController {
 			        .collect(Collectors.groupingBy(e -> "001".equals(e.getMain_cat())));
 
 			    List<Comm> jobTech1 = jobTechTotal.get(true);
-			    List<Comm> jobTech2 = jobTechTotal.get(false);
+			    List<Comm> middlecont = jobTechTotal.get(false);
 		//리스트를 맵 객체로 만든다? 받은 객체를 일단 게터를 이용해서 대분류가 001 이라는 문자를 갖고있는지 확인해서 분류한다.
 		//아랫줄에서  Map<진위여부,리스트객체> 이렇게 있을 것이다. 
 		//진위여부에 true를 입력하면 001로 분류된 것들이 jobTech1로 모이고 아니면 2로 모인다. 
 			        
+		  Map<Boolean, List<Comm>> middlecont1 = middlecont.stream()
+				        .collect(Collectors.groupingBy(e -> "002".equals(e.getMain_cat())));
+
+				    List<Comm> jobTech2 = middlecont1.get(true);
+				    List<Comm> recEdu = middlecont1.get(false);	  
+		//3가지를 받은 뒤에 1차 거르고 2차 거르는 형태인데.. 이거 switch문 같이 한번에 해결할 방법이 분명 있을 것 같다		    
+			    
+			    
 		 System.out.println("jobTech1의 길이"+jobTech1.size());
 		 System.out.println("jobTech2의 길이"+jobTech2.size());
+		 System.out.println("recEdu의 길이"+recEdu.size());
 
 
 		
 		model.addAttribute("compInfo", compInfo);
 		model.addAttribute("jobTech1", jobTech1);
 		model.addAttribute("jobTech2", jobTech2);
+		model.addAttribute("recEdu", recEdu);
 	
 		
 		return "dj/annoWrite";
@@ -118,9 +128,32 @@ public class DjAnnoWriteController {
 	
 	
 	@PostMapping(value="DjAnnoWriting")
-	public String annoWriting() {
+	public String annoWriting(Model model,Company comp, Announce anno) {
+		System.out.println("컨트롤러에서 annoWriting 시작되었습니다. ");
 		
-		return "redirect? forward??";
+		System.out.println("anno.getAnno_title()->"+anno.getAnno_code());
+		System.out.println("anno.getTech_tag2()->"+anno.getCom_id());
+		System.out.println("anno.getCom_bus()->"+anno.getCom_bus());
+		System.out.println("anno.getRec_vol()->"+anno.getRec_vol());
+		System.out.println("anno.getRec_dtl()->"+anno.getRec_dtl());
+		System.out.println("anno.getEmp_type()->"+anno.getEmp_type());
+		System.out.println("anno.getCareer()->"+anno.getCareer());
+		System.out.println("anno.getRec_edu()->"+anno.getRec_edu());
+		System.out.println("anno.getPay_info()->"+anno.getPay_info());
+		System.out.println("anno.getWork_cdt()->"+anno.getWork_cdt());
+		System.out.println("anno.getEtc_cdt()->"+anno.getEtc_cdt());
+		System.out.println("anno.getJob_tag()->"+anno.getJob_tag());
+		System.out.println("anno.getTech_tag1()->"+anno.getTech_tag1());
+		System.out.println("anno.getTech_tag2()->"+anno.getTech_tag2());
+		System.out.println("anno.getAnno_regdate()->"+anno.getAnno_regdate());
+		System.out.println("anno.getAnno_title()->"+anno.getAnno_title());
+		
+		// 1. 공고 작성 사항 입력하기
+		das.annoWriting(anno);
+		
+		
+//		return "redirect:GmAnnoLIst";
+		return "dj/testpage112";
 	}
 	
 }

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.oracle.s20210904.comm.model.Announce;
 import com.oracle.s20210904.comm.model.Comm;
 import com.oracle.s20210904.comm.model.Company;
 
@@ -83,6 +84,29 @@ public class DjAnnoDaoImpl implements DjAnnoDao {
 		
 		
 		return mainCat;
+	}
+
+	@Override
+	public void annoWriting(Announce anno) {
+			
+			int answer11 = 0;
+		
+		try {
+			answer11=session.insert("DjAnnoInsert", anno);
+			System.out.println("다오에서 응답결과 확인");
+			
+			switch(answer11) {
+			
+			case 1: System.out.println("insert가 깔끔하게 완료되었습니다!"); break;
+			default : System.out.println("insert에 문제가 생겼다오"); break;
+			
+			}
+			
+		} catch (Exception e) {
+			System.out.println("DjAnnoDaoImpl의 annoWriting에서 예외 발생!"+e.getMessage());
+		}
+		
+		
 	}
 	
 	
