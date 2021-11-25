@@ -49,7 +49,9 @@
 				<div class="middleTitle"><label for="annoJob1">모집 직종</label></div> 
 				<select name="job_tag" id="annoJob1">
 					<c:forEach var="jobTech1" items="${jobTech1}">
+
 								<option value="job_tag">${jobTech1.comm_ctx}</option>				
+
 					</c:forEach>
 				</select> <p>
 				
