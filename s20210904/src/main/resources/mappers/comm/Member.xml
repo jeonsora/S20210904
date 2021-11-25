@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="UserDao">
-	<select id="userSelectAll" resultType="User">
+	<select id="memberSelectAll" resultType="Member">
 		select * from member order by user_id
 	</select>
 	
-	<select id="userSelectOne" parameterType="User" resultType="User">
+	<select id="memberSelectOne" parameterType="Member" resultType="Member">
 		select * from member 
 		where user_id=#{user_id}
 	</select>
