@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%response.sendRedirect("testForm"); %>
+
+	<%response.sendRedirect("Comjoin"); %>
+
+<%-- 	<%response.sendRedirect("CompanyMypage"); %> --%>
+<%-- <%response.sendRedirect("AdminMain"); %> --%>
+	 <%response.sendRedirect("GmAnnoList"); %> 
+	<%-- <%response.sendRedirect("DjAnnoWrite"); %> --%>
+
+
 </body>
 </html>

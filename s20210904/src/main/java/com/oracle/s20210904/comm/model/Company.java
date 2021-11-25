@@ -18,4 +18,5 @@ public class Company {
 	private String com_mgr_tel;
 	private String com_web;
 	private String com_img;
+	private int com_grade;
 }

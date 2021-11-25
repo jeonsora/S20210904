@@ -15,9 +15,9 @@ public class Announce {
 	private int    rec_vol;
 	private String rec_dtl;
 	private int    emp_type;
-	private String tech_stk;
 	private String career;
-	private String pay_info;
+	private String rec_edu;
+	private int pay_info;
 	private String work_cdt;
 	private String etc_cdt;
 	private String job_tag;
@@ -26,4 +26,11 @@ public class Announce {
 	private Date   anno_regdate;
 	private Date   anno_c_regdate;
 	private String anno_title;
+	
+	// 조회용
+	private String pageNum;
+	private int start;
+	private int end;
 }
+
+
