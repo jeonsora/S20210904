@@ -5,7 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.oracle.s20210904.comm.model.Company;
-import com.oracle.s20210904.comm.model.User;
+import com.oracle.s20210904.comm.model.Member;
+
 
 @Repository
 public class ShMemberDaoImpl implements ShMemberDao {
@@ -15,15 +16,18 @@ public class ShMemberDaoImpl implements ShMemberDao {
 	
 	//개인 회원가입 
 	@Override
-	public int joinuser(User user) {
-		int joinuser= 0;
-		System.out.println("ShUserDaoImpl joinuser Start...");
+	public int joinmember(Member member) {
+		int joinmember= 0;
+		System.out.println("ShMemberDaoImpl joinmember Start...");
 		try {
-			joinuser = session.insert("ShJoinUser");
+			 member.setUser_img(""); //이미지는 null값
+			System.out.println("ShMemberDaoImpl joinmember.getUser_id()->"+member.getUser_id());
+			System.out.println("ShMemberDaoImpl joinmember.getUser_pw()->"+member.getUser_pw());
+			joinmember = session.insert("ShJoinMember", member);
 		} catch (Exception e) {
-			System.out.println("ShUserDaoImpl joinuser Exception "+e.getMessage());
+			System.out.println("ShMemberDaoImpl joinmember Exception-> "+e.getMessage());
 		}
-		return joinuser;
+		return joinmember;
 	}
 
 	//기업 회원가입
@@ -32,7 +36,7 @@ public class ShMemberDaoImpl implements ShMemberDao {
 		int joincom = 0;
 		System.out.println("ShUserDaoImpl joincom Start...");
 		try {
-			joincom=session.insert("ShJoinCom");
+			joincom=session.insert("ShJoinCompany" , company);
 		} catch (Exception e) {
 			System.out.println("ShUserDaoImpl joincom Exception" + e.getMessage());
 		}
