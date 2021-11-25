@@ -26,7 +26,7 @@ public class ResumeContect implements Serializable{
 	@Id
 	private String user_id;
 	@Id
-	private String res_code;
+	private int res_code;
 	private Date res_date;
 	private String ntc_code;
 }

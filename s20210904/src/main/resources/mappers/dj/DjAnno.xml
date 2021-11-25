@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DjAnnoDao">
+	
+	<select id="DjcomInfo" parameterType="java.lang.String" resultType="Company">
+	
+		select *
+		from company
+		where com_ID = #{com_id}
+	
+	</select>
+	
+	<select id="DjJobTect1" resultType="Comm">
+		select *
+		from comm
+		where main_cat = 001
+	</select>
+	
+	<select id="DjJobTect2" resultType="Comm">
+		select *
+		from comm
+		where main_cat = 002
+	</select>
+	
+	<select id="DjJobTect" resultType="Comm">
+		select *
+		from comm
+		where main_cat = 001 or
+		main_cat= 002
+	</select>
+
+</mapper>

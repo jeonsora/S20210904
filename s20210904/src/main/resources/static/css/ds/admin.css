@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+
+.alram{
+	display:flex;
+	width:100%;
+	height:50px;
+	background-color: #ffa80c;
+	font-size: 15px;
+}
+
+.alram_btn{
+	margin: auto;
+}
+
+.alram>img{
+	margin-left: 15px;
+
+}
+.body {
+	display: flex;
+}
+
+.nav {
+	display: flex;
+	flex-direction: column;
+	background-color: #ffd83c;
+	width: 15%;
+	height: 1000px;
+	font-size: 25px;
+	align-items: center;
+}
+
+.logo{
+	margin: 5% auto !important;
+}
+
+.nav>a {
+	margin: 30% auto;
+}
+
+
+
+.adminBoard {
+	width:85%;
+	height:1000px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+}
+
+#box1{
+	border:1px solid black;
+	width:49%;
+	height:500px;
+}
+
+.announceCount > ul{
+	display: flex;
+    margin: 5% 10%;
+    justify-content: space-between;
+}
+
+.announceBoard > ul{
+	display: flex;
+    margin: 5% 10%;
+    justify-content: space-between;	
+}
+
+.announceBoard > table{
+	border: 1px solid #444444;
+    margin-left: 10%;
+    margin-right: 10%; 
+}
+.chart{
+	width:400px;
+	height:300px;
+	margin:auto;
+}
+#myChart{
+	margin-top:auto;
+	margint-left:auto;
+	margint-right:auto;
+}
+
+.QnA{
+	display: flex; 
+	flex-direction: column;
+}
+.QnA > ul{
+	display: flex;
+    margin: 5% 10%;
+    justify-content: space-between;
+}
+.QnA > table{
+	border: 1px solid #444444;
+    margin-left: 10%;
+    margin-right: 10%; 
+}
+
+.confirmContext{
+	display: flex; 
+	flex-direction: column;
+}
+.confirmContext > ul{
+	display: flex;
+    margin: 5% 10%;
+    justify-content: space-between;
+}
+.confirmContext > table{
+	border: 1px solid #444444;
+    margin-left: 10%;
+    margin-right: 10%; 
+}
+
+#box1 >tr,th, td {
+	padding:10px !important;
+    border: 1px solid black !important;
+}
+/*표제목 회색 */
+.title{
+	background-color: gray;
+}
+/* 아이템목록  */
+.waitItem{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.confirmBtn{
+	margin-left: auto;
+}
+.answerBtn{
+	margin-left: auto;
+}
+
+#memberListbox{
+	border: 1px solid black;
+	width:85%;
+	height:1000px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	justify-content: center;
+	align-item: center;
+}
+.memberList{
+	width: 80%;
+	margin: auto;
+}

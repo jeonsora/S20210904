@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class Resume {
 	private String user_id;
-	private String res_code;
+	private int res_code;
 	private String res_sts;
 	private String rep_res;
 	private String res_email;

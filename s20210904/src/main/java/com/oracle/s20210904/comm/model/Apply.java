@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class Apply {
 	private String user_id;
-	private String res_code;
+	private int res_code;
 	private String conno_code;
 	private String app_sts;
 	private Date app_regdate;
