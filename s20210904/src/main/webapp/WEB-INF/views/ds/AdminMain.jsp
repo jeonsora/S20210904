@@ -42,10 +42,12 @@
 					<img src="#"><a href="#">미승인</a>
 				</span>
 			</div>
-			<a href="#" class="logo"><img src="img/ds/logo.png" width="100%"
-				height="50px"></a> <a href="#"><span>대시보드</span></a> <a href="#"><span>회원관리</span></a>
-			<a href="#"><span>기업관리</span></a> <a href="#"><span>태그관리</span></a> <a
-				href="#"><span>게시판관리</span></a>
+			<a href="#" class="logo"><img src="img/ds/logo.png" width="100%" height="50px"></a> 
+				<a href="AdminMain"><span>대시보드</span></a>
+				<a href="memberMenu"><span>회원관리</span></a>
+				<a href="companyMenu"><span>기업관리</span></a>
+			 	<a href="tagMenu"><span>태그관리</span></a> 
+			 	<a href="boardMenu"><span>게시판관리</span></a>
 		</div>
 		<div class="adminBoard">
 			<div id="box1">
@@ -94,7 +96,7 @@
 					<li>기업승인현황</li>
 					<li><a href="#">>더보기</a></li>
 				</ul>
-				<table class="QnAlist">
+				<table>
 					<tr>
 						<th class="title">기업명</th>
 					</tr>
@@ -120,27 +122,31 @@
 				</table>
 				</div>
 			</div>
-			<div id="box1">
+			<div id="box1" class="announceBoard">
 				<ul>
 					<li>공고현황</li>
 					<li><a href="#">>더보기</a></li>
 				</ul>
-				<table class="QnAlist">
+				<table>
 					<tr>
 						<th class="title">공고명</th>
 					</tr>
-					<c:forEach var="i" begin="0" end="4">
+					<c:if test="${atotCnt == 0 }">
 						<tr>
-							<td>중앙테크로오세요</td>
+							<td>업로드된 공고가 없습니다</td>
 						</tr>
-					</c:forEach>
-					<c:forEach var="QnAList" items="${QnAList}" varStatus="status">
-						<c:if test="${stauts.index < 5 }">
-							<tr>
-								<td>${QnAList.title}</td>
-							</tr>
-						</c:if>
-					</c:forEach>
+					</c:if>
+					<c:if test="${atotCnt > 0 }">
+						<c:forEach var="announceList" items="${announceList}"
+							varStatus="status">
+							<c:if test="${status.index < 5 }">
+								<tr>
+									<td class="announceItem"><a href="#">${announceList.anno_title}</a>
+									</td>
+								</tr>
+							</c:if>
+						</c:forEach>
+					</c:if>
 				</table>
 			</div>
 		</div>

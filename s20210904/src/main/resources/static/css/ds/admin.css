@@ -60,6 +60,18 @@
     margin: 5% 10%;
     justify-content: space-between;
 }
+
+.announceBoard > ul{
+	display: flex;
+    margin: 5% 10%;
+    justify-content: space-between;	
+}
+
+.announceBoard > table{
+	border: 1px solid #444444;
+    margin-left: 10%;
+    margin-right: 10%; 
+}
 .chart{
 	width:400px;
 	height:300px;
@@ -122,3 +134,17 @@
 	margin-left: auto;
 }
 
+#memberListbox{
+	border: 1px solid black;
+	width:85%;
+	height:1000px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	justify-content: center;
+	align-item: center;
+}
+.memberList{
+	width: 80%;
+	margin: auto;
+}

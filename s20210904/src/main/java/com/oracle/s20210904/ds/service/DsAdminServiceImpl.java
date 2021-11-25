@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.oracle.s20210904.comm.model.Announce;
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
+import com.oracle.s20210904.comm.model.User;
 import com.oracle.s20210904.ds.dao.DsAdminDao;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
 
@@ -40,4 +42,15 @@ public class DsAdminServiceImpl implements DsAdminService {
 		return annCntList;
 	}
 	
+	@Override
+	public List<Announce> getAnnounce() {
+		List<Announce> announce = dsAdminDao.getAnnounce();
+		return announce;
+	}
+	
+	@Override
+	public List<User> getUserList() {
+		List<User> userList = dsAdminDao.getUserList();
+		return userList;
+	}
 }
