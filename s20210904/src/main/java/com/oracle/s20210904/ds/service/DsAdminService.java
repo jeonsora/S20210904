@@ -7,6 +7,7 @@ import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.comm.model.Member;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
+import com.oracle.s20210904.ds.model.DsComm;
 
 
 public interface DsAdminService {
@@ -16,6 +17,14 @@ public interface DsAdminService {
 	List<Post> getQnaList();
 	List<AnnounceCnt> announceCnt();
 	List<Announce> getAnnounce();
-	List<Member> getUserList();
+	List<Member> getUserList(Member member);
+	int totCnt();
+	int ctotCnt();
+	int cctotCnt();
+	List<Company> getCompanyList(Company com);
+	List<Company> getComConfirmList(Company com);
+	Company getCompany(Company com);
+	int ttotCnt();
+	List<DsComm> getDsCommList(DsComm dsComm);
 
 }

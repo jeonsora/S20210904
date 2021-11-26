@@ -19,4 +19,7 @@ public class Company {
 	private String com_web;
 	private String com_img;
 	private int com_grade;
+	
+	private int start;
+	private int end;
 }
