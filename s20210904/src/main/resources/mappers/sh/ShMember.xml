@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ShMemberDao">
+
+	<insert id="ShJoinMember"   parameterType="Member" >
+		insert into MEMBER values (#{user_id},#{user_pw},#{user_name},#{user_sex},#{user_brh},#{user_edu}, 
+																#{user_addr},#{user_tel},#{user_email},#{user_img})
+	</insert>
+		
+	<insert id="ShJoinCompany" parameterType="Company">
+		insert into COMPANY values (#{com_id},#{com_pw},#{com_name},#{com_tel},#{com_addr},#{com_email},
+																		#{com_sec},#{com_regnum},#{com_mgr_tel})
+	
+	
+	</insert>
+
+
+</mapper>
