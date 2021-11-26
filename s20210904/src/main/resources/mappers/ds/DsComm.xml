@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DsComm">
+	
+	<!-- QnA 게시글 목록 -->
+	<select id="DsttotCnt" resultType="int">
+		select count(*) from comm
+	</select>
+	
+	<select id="DsCommList" resultType="DsComm" parameterType="DsComm">
+		select c.*, b.comm_ctx as comm_ctx2
+		from (select rownum rn, c.* from comm c )c,(select * from comm where sub_cat='999') b
+		where c.main_cat = b.main_cat and rn between #{start} and #{end}
+	</select>
+	
+</mapper>

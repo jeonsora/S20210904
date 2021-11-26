@@ -11,8 +11,7 @@
 	<%response.sendRedirect("Comjoin"); %>
 
 <%-- 	<%response.sendRedirect("CompanyMypage"); %> --%>
-<%-- <%response.sendRedirect("AdminMain"); %> --%>
-	 <%response.sendRedirect("GmAnnoList"); %> 
+	 <%response.sendRedirect("AdminMain"); %> 
 	<%-- <%response.sendRedirect("DjAnnoWrite"); %> --%>
 
 

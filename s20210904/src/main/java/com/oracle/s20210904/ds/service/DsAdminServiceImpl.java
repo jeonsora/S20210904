@@ -11,6 +11,7 @@ import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.comm.model.Member;
 import com.oracle.s20210904.ds.dao.DsAdminDao;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
+import com.oracle.s20210904.ds.model.DsComm;
 
 @Service
 public class DsAdminServiceImpl implements DsAdminService {
@@ -49,8 +50,56 @@ public class DsAdminServiceImpl implements DsAdminService {
 	}
 	
 	@Override
-	public List<Member> getUserList() {
-		List<Member> userList = dsAdminDao.getUserList();
+	public List<Member> getUserList(Member member) {
+		List<Member> userList = dsAdminDao.getUserList(member);
 		return userList;
+	}
+	
+	@Override
+	public int totCnt() {
+		int totCnt = dsAdminDao.totCnt();
+		return totCnt;
+	}
+	
+	@Override
+	public int ctotCnt() {
+		int ctotCnt = dsAdminDao.ctotCnt();
+		return ctotCnt;
+	}
+	
+	@Override
+	public int cctotCnt() {
+		int cctotCnt = dsAdminDao.cctotCnt();
+		return cctotCnt;
+	}
+	
+	@Override
+	public List<Company> getCompanyList(Company com) {
+		List<Company> companyList = dsAdminDao.getCompanyList(com);
+		return companyList;
+	}
+	
+	@Override
+	public List<Company> getComConfirmList(Company com) {
+		List<Company> comConfirmList = dsAdminDao.getComConfirmList(com);
+		return comConfirmList;
+	}
+	
+	@Override
+	public Company getCompany(Company com) {
+		Company company = dsAdminDao.getCompany(com);
+		return company;
+	}
+	
+	@Override
+	public int ttotCnt() {
+		int ttotCnt = dsAdminDao.ttotCnt();
+		return ttotCnt;
+	}
+	
+	@Override
+	public List<DsComm> getDsCommList(DsComm dsComm) {
+		List<DsComm> dsCommList = dsAdminDao.getDsCommList(dsComm);
+		return dsCommList;
 	}
 }
