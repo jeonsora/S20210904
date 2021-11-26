@@ -17,5 +17,10 @@ public interface DsAdminDao {
 	List<Announce> getAnnounce();
 	List<Member> getUserList(Member member);
 	int totCnt();
+	int ctotCnt();
+	int cctotCnt();
+	List<Company> getCompanyList(Company com);
+	List<Company> getComConfirmList(Company com);
+	Company getCompany(Company com);
 
 }

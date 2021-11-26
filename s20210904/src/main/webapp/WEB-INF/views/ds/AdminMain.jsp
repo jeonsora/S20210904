@@ -39,7 +39,7 @@
 		<div class="nav">
 			<div class="alram">
 				<span class="alram_btn"> <img src="#"><a href="#">미답변</a>&nbsp;&nbsp;
-					<img src="#"><a href="#">미승인</a>
+										 <img src="#"><a href="#">미승인</a>
 				</span>
 			</div>
 			<a href="#" class="logo"><img src="img/ds/logo.png" width="100%" height="50px"></a> 

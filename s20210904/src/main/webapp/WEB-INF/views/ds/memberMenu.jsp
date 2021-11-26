@@ -27,6 +27,7 @@
 		</div>
 		<div id="memberListbox" class="memberListbox" >
 				<span class="subject">회원관리</span>
+				<span class="search"><input type="text" class="searchTxt"><input type="button" value="검색" class="searchBtn"></span>
 				<table class="memberList">
 					<tr class="title">
 						<th >아이디</th><th>이름</th><th></th>
@@ -53,7 +54,6 @@
 						<a href="memberMenu?currentPage=${pg.startPage+pg.pageBlock}">[다음]</a></c:if>
 					</li>
 				</ul>
-
 
 		</div>
 	</div>

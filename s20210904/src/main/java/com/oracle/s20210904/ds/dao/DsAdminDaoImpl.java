@@ -60,4 +60,34 @@ public class DsAdminDaoImpl implements DsAdminDao {
 		int totCnt = session.selectOne("DsTotCnt");
 		return totCnt;
 	}
+	
+	@Override
+	public int ctotCnt() {
+		int ctotCnt = session.selectOne("DscTotCnt");
+		return ctotCnt;
+	}
+	
+	@Override
+	public int cctotCnt() {
+		int cctotCnt = session.selectOne("DsccTotCnt");
+		return cctotCnt;
+	}
+	
+	@Override
+	public List<Company> getCompanyList(Company com) {
+		List<Company> companyList = session.selectList("DsCompanyList",com);
+		return companyList;
+	}
+	
+	@Override
+	public List<Company> getComConfirmList(Company com) {
+		List<Company> comConfirmList = session.selectList("DsComConfirmList",com);
+		return comConfirmList;
+	}
+	
+	@Override
+	public Company getCompany(Company com) {
+		Company company = session.selectOne("companySelectOne",com);
+		return company;
+	}
 }

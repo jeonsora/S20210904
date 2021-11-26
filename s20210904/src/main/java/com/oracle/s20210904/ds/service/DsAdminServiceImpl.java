@@ -59,4 +59,34 @@ public class DsAdminServiceImpl implements DsAdminService {
 		int totCnt = dsAdminDao.totCnt();
 		return totCnt;
 	}
+	
+	@Override
+	public int ctotCnt() {
+		int ctotCnt = dsAdminDao.ctotCnt();
+		return ctotCnt;
+	}
+	
+	@Override
+	public int cctotCnt() {
+		int cctotCnt = dsAdminDao.cctotCnt();
+		return cctotCnt;
+	}
+	
+	@Override
+	public List<Company> getCompanyList(Company com) {
+		List<Company> companyList = dsAdminDao.getCompanyList(com);
+		return companyList;
+	}
+	
+	@Override
+	public List<Company> getComConfirmList(Company com) {
+		List<Company> comConfirmList = dsAdminDao.getComConfirmList(com);
+		return comConfirmList;
+	}
+	
+	@Override
+	public Company getCompany(Company com) {
+		Company company = dsAdminDao.getCompany(com);
+		return company;
+	}
 }

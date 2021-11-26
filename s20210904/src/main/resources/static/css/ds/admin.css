@@ -155,8 +155,51 @@
 	margin-right: auto;
 }
 .subject{
-	margin-top:10%;
+	display:flex;
+	margin-top:5%;
 	margin-left: 10%;
-	margin-bottom: 10%;
 	font-size: 50px;
+}
+.search{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 10%;
+	margin-bottom: 5%;
+}
+
+.companyListbox{
+	display: flex;
+	flex-wrap: wrap;
+	width:85%;
+	height:1000px;
+}
+.companyList{
+	border: 1px solid black;
+	width:50%;
+	height:700px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;	
+}
+.companyConfirmList{
+	border: 1px solid black;
+	width:49.6%;
+	height:700px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;	
+}
+.companyDetail{
+	display:flex;
+	width:100%;
+	height:300px;
+}
+.content{
+	margin-top: 5%;
+	margin-left: 5%;
+}
+.contentdetail{
+	display:inline-block;
+	text-align:right;
+	width: 110px;
 }

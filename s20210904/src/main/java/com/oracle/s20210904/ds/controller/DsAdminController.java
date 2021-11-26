@@ -69,8 +69,28 @@ public class DsAdminController {
 	}
 	
 	@GetMapping(value="companyMenu")
-	public String companyMenu() {
+	public String companyMenu(Company com, Model model, String currentPage, String currentPage2) {
+		int ctotCnt = dsAdminService.ctotCnt();
+		Paging pg = new Paging(ctotCnt,currentPage);
+		com.setStart(pg.getStart());
+		com.setEnd(pg.getEnd());
+		List<Company> companyList = dsAdminService.getCompanyList(com);
+		model.addAttribute("companyList",companyList);
+		model.addAttribute("ctotCnt",ctotCnt);
+		model.addAttribute("pg",pg);
+		System.out.println("ctotCnt->"+ctotCnt);
+		System.out.println("companyList->"+companyList.size());
 		
+		int cctotCnt = dsAdminService.cctotCnt();
+		Paging pg2 = new Paging(cctotCnt,currentPage2);
+		com.setStart(pg2.getStart());
+		com.setEnd(pg2.getEnd());
+		List<Company> companyConfirmList = dsAdminService.getComConfirmList(com);
+		model.addAttribute("companyConfirmList",companyConfirmList);
+		model.addAttribute("cctotCnt",cctotCnt);
+		model.addAttribute("pg2",pg2);
+		System.out.println("cctotCnt->"+cctotCnt);
+		System.out.println("companyConfirmList->"+companyConfirmList.size());
 		return "ds/companyMenu";
 	}
 	
