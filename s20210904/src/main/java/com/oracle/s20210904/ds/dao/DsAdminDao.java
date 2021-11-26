@@ -7,6 +7,7 @@ import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.comm.model.Member;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
+import com.oracle.s20210904.ds.model.DsComm;
 
 public interface DsAdminDao {
 
@@ -22,5 +23,7 @@ public interface DsAdminDao {
 	List<Company> getCompanyList(Company com);
 	List<Company> getComConfirmList(Company com);
 	Company getCompany(Company com);
+	int ttotCnt();
+	List<DsComm> getDsCommList(DsComm dsComm);
 
 }

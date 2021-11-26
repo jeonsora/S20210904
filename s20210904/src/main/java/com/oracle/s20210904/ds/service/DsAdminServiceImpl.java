@@ -11,6 +11,7 @@ import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.comm.model.Member;
 import com.oracle.s20210904.ds.dao.DsAdminDao;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
+import com.oracle.s20210904.ds.model.DsComm;
 
 @Service
 public class DsAdminServiceImpl implements DsAdminService {
@@ -88,5 +89,17 @@ public class DsAdminServiceImpl implements DsAdminService {
 	public Company getCompany(Company com) {
 		Company company = dsAdminDao.getCompany(com);
 		return company;
+	}
+	
+	@Override
+	public int ttotCnt() {
+		int ttotCnt = dsAdminDao.ttotCnt();
+		return ttotCnt;
+	}
+	
+	@Override
+	public List<DsComm> getDsCommList(DsComm dsComm) {
+		List<DsComm> dsCommList = dsAdminDao.getDsCommList(dsComm);
+		return dsCommList;
 	}
 }

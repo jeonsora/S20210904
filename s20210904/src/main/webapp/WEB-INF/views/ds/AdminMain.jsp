@@ -42,12 +42,19 @@
 										 <img src="#"><a href="#">미승인</a>
 				</span>
 			</div>
-			<a href="#" class="logo"><img src="img/ds/logo.png" width="100%" height="50px"></a> 
+			<div class=navBtn>
+				<a href="#" class="logo"><img src="img/ds/logo.png" width="100%" height="50px"></a>
+				<hr class="line"> 
 				<a href="AdminMain"><span>대시보드</span></a>
+				<hr class="line">
 				<a href="memberMenu"><span>회원관리</span></a>
+				<hr class="line">
 				<a href="companyMenu"><span>기업관리</span></a>
-			 	<a href="tagMenu"><span>태그관리</span></a> 
+				<hr class="line">
+			 	<a href="tagMenu"><span>태그관리</span></a>
+			 	<hr class="line">
 			 	<a href="boardMenu"><span>게시판관리</span></a>
+			 </div>
 		</div>
 		<div class="adminBoard">
 			<div id="box1">
@@ -94,7 +101,7 @@
 				<div class="confirmContext">
 				<ul>
 					<li>기업승인현황</li>
-					<li><a href="#">>더보기</a></li>
+					<li><a href="companyMenu">>더보기</a></li>
 				</ul>
 				<table>
 					<tr>
@@ -122,7 +129,8 @@
 				</table>
 				</div>
 			</div>
-			<div id="box1" class="announceBoard">
+			<div id="box1" >
+			<div class="announceBoard">
 				<ul>
 					<li>공고현황</li>
 					<li><a href="#">>더보기</a></li>
@@ -148,6 +156,7 @@
 						</c:forEach>
 					</c:if>
 				</table>
+			</div>
 			</div>
 		</div>
 	</div>

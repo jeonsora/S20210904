@@ -11,6 +11,7 @@ import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.comm.model.Member;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
+import com.oracle.s20210904.ds.model.DsComm;
 
 @Repository
 public class DsAdminDaoImpl implements DsAdminDao {
@@ -89,5 +90,17 @@ public class DsAdminDaoImpl implements DsAdminDao {
 	public Company getCompany(Company com) {
 		Company company = session.selectOne("companySelectOne",com);
 		return company;
+	}
+	//comm 총 갯수
+	@Override
+	public int ttotCnt() {
+		int ttotCnt = session.selectOne("DsttotCnt");
+		return ttotCnt;
+	}
+	
+	@Override
+	public List<DsComm> getDsCommList(DsComm dsComm) {
+		List<DsComm> dsCommList = session.selectList("DsCommList",dsComm);
+		return dsCommList;
 	}
 }

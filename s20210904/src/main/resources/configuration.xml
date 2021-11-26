@@ -14,9 +14,10 @@
 		<typeAlias alias="ResumeDetail" type="com.oracle.s20210904.comm.model.ResumeDetail"/>
 		<typeAlias alias="Scrap" type="com.oracle.s20210904.comm.model.Scrap"/>
 		<typeAlias alias="Member" type="com.oracle.s20210904.comm.model.Member"/>
-		<typeAlias alias="AnnounceCnt" type="com.oracle.s20210904.ds.model.AnnounceCnt"/>
-		<typeAlias alias="Member" type="com.oracle.s20210904.comm.model.Member"/>
 		<typeAlias alias="ComAnnounce" type="com.oracle.s20210904.comm.model.ComAnnounce"/>
+		<typeAlias alias="DsComm" type="com.oracle.s20210904.ds.model.DsComm"/>
+		<typeAlias alias="AnnounceCnt" type="com.oracle.s20210904.ds.model.AnnounceCnt"/>
+		
 
 	</typeAliases>
 </configuration>

@@ -22,7 +22,6 @@
 				dataType:'Json',
 				success:function(data){     
 					$(".comId").html(data.com_id);
-					$(".comBus").html(data.com_bus);
 					$(".comAddr").html(data.com_addr);
 					$(".comEmail").html(data.com_email);
 					$(".comHome").html(data.com_web);
@@ -40,15 +39,22 @@
 		<div class="nav">
 			<div class="alram">
 				<span class="alram_btn"> <img src="#"><a href="#">미답변</a>&nbsp;&nbsp;
-					<img src="#"><a href="#">미승인</a>
+										 <img src="#"><a href="#">미승인</a>
 				</span>
 			</div>
-			<a href="#" class="logo"><img src="img/ds/logo.png" width="100%" height="50px"></a> 
+			<div class=navBtn>
+				<a href="#" class="logo"><img src="img/ds/logo.png" width="100%" height="50px"></a>
+				<hr class="line"> 
 				<a href="AdminMain"><span>대시보드</span></a>
+				<hr class="line">
 				<a href="memberMenu"><span>회원관리</span></a>
+				<hr class="line">
 				<a href="companyMenu"><span>기업관리</span></a>
-			 	<a href="tagMenu"><span>태그관리</span></a> 
+				<hr class="line">
+			 	<a href="tagMenu"><span>태그관리</span></a>
+			 	<hr class="line">
 			 	<a href="boardMenu"><span>게시판관리</span></a>
+			 </div>
 		</div>
 		<div id="companyListbox" class="companyListbox" >
 			<div class="companyList">
@@ -116,9 +122,8 @@
 					<span class="subject">기업정보</span>
 					<div class="content">
 						<span class="contentdetail">기업명 :</span><span class="comId"></span><br>
-						<span class="contentdetail">업무 :</span><span class="comBus"></span><br>
 						<span class="contentdetail">주소 :</span><span class="comAddr"></span><br>
-						<span class="contentdetail">이메일 :</span><span class="Email"></span><br>
+						<span class="contentdetail">이메일 :</span><span class="comEmail"></span><br>
 						<span class="contentdetail">홈페이지 :</span><span class="comHome"></span><br>
 						<span class="contentdetail">회사전화번호 :</span><span class="comNum"></span><br>
 						<span class="contentdetail">담담자번호 :</span><span class="comPhone"></span><br>

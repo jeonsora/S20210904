@@ -12,6 +12,7 @@ import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.comm.model.Member;
 import com.oracle.s20210904.ds.model.AnnounceCnt;
+import com.oracle.s20210904.ds.model.DsComm;
 import com.oracle.s20210904.ds.service.DsAdminService;
 import com.oracle.s20210904.ds.service.Paging;
 
@@ -101,7 +102,16 @@ public class DsAdminController {
 	}
 	
 	@GetMapping(value="tagMenu")
-	public String tagMenu() {
+	public String tagMenu(DsComm dsComm,Model model, String currentPage) {
+		int ttotCnt = dsAdminService.ttotCnt();
+		Paging pg = new Paging(ttotCnt,currentPage);
+		dsComm.setStart(pg.getStart());
+		dsComm.setEnd(pg.getEnd());
+		List<DsComm> dsCommList = dsAdminService.getDsCommList(dsComm);
+		
+		model.addAttribute("dsCommList",dsCommList);
+		model.addAttribute("ttotCnt",ttotCnt);
+		model.addAttribute("pg",pg);
 		
 		return "ds/tagMenu";
 	}

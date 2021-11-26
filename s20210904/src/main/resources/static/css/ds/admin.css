@@ -2,6 +2,7 @@
 
 
 .alram{
+	border: 1px solid black;
 	display:flex;
 	width:100%;
 	height:50px;
@@ -17,6 +18,7 @@
 	margin-left: 15px;
 
 }
+
 .body {
 	display: flex;
 }
@@ -30,15 +32,25 @@
 	font-size: 25px;
 	align-items: center;
 }
-
+.navBtn{
+	height:950px;
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.navBtn > a{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.line{
+	border: 1px solid black;
+	width: 100%;
+}
 .logo{
 	margin: 5% auto !important;
 }
-
-.nav>a {
-	margin: 30% auto;
-}
-
 
 
 .adminBoard {
@@ -59,6 +71,10 @@
 	display: flex;
     margin: 5% 10%;
     justify-content: space-between;
+}
+.announceBoard{
+	display: flex;
+	flex-direction: column;
 }
 
 .announceBoard > ul{
@@ -145,18 +161,20 @@
 }
 .memberList{
 	width: 80%;
+	margin-top: 5%;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
 }
 .pageBtn{
+	display: flex;
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 }
 .subject{
 	display:flex;
-	margin-top:5%;
+	margin-top:30px;
 	margin-left: 10%;
 	font-size: 50px;
 }
@@ -164,7 +182,6 @@
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 10%;
-	margin-bottom: 5%;
 }
 
 .companyListbox{
@@ -175,7 +192,7 @@
 }
 .companyList{
 	border: 1px solid black;
-	width:50%;
+	width:60%;
 	height:700px;
 	display: flex;
 	flex-wrap: wrap;
@@ -183,7 +200,7 @@
 }
 .companyConfirmList{
 	border: 1px solid black;
-	width:49.6%;
+	width:39.6%;
 	height:700px;
 	display: flex;
 	flex-wrap: wrap;
@@ -195,11 +212,18 @@
 	height:300px;
 }
 .content{
-	margin-top: 5%;
+	margin-top: 30px;
 	margin-left: 5%;
 }
 .contentdetail{
 	display:inline-block;
 	text-align:right;
 	width: 110px;
+}
+
+.addTag{
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10px;
+	margin-right: 10%;
 }
