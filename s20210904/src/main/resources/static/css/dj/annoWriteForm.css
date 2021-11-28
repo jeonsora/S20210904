@@ -2,22 +2,112 @@
 
 
 
+.MyContainer {
+	
+	padding: 20px;
+	
+}
+
+
+.annoWrite_title{
+	font-size: 40px;
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+
+
+.titleContainer{
+	padding: 20px;
+}
 
 
 
-
-
+.anno_title_insert{
+	width: 500px;
+	
+}
 
 
 .bigTitle_anno {
 	
 	font-size: 30px;
-	
+	padding: 20px;
+	border: none;
+	background: #F1C40F;
 	
 }
+
+.bigTitle_anno1{
+	font-size: 30px;
+	padding: 20px;
+	display: inline-block;
+	
+}
+
+.anno1_ctx{
+	display: inline-block;
+}
+
+
+
+.middleTitle_anno{
+	
+	font-size: 20px;
+	padding: 10px;
+	display: inline-block;
+}
+
+.middleTitle_anno_text{
+	
+	font-size: 20px;
+	padding: 10px;
+}
+
+
+
+
+.combus_ctx {
+	border: 1px solid black;
+	width: 300px;
+	height: 150px;
+}
+
+
+
+
 
 .imagesquare1 {
 	
 	width: 150px;
 	height: 150px;
+}
+
+#salButton{
+	
+/* 	float : left; */
+	width: 70px;
+	height: 20px; 
+	background-color: #ccc;
+	border-radius: 20px;
+	
+	box-shadow : 3px 3px 3px black;
+	transition-duration:0.3s;
+	
+}
+
+#salButton:active{
+	margin-left: 5px;
+	margin-top: 5px;
+	box-shadow: none;
+}
+
+.input_anno_c_regdate{
+	 display: none; 
+}
+
+.gobut {
+	width: 500px;
+	height: 100px;
+	
 }

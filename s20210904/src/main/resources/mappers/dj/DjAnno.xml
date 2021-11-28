@@ -47,6 +47,7 @@
 			tech_tag1,
 			tech_tag2,
 			anno_regdate,
+			anno_c_regdate,
 			anno_title
 		)
 		
@@ -66,6 +67,7 @@
 			#{tech_tag1},
 			#{tech_tag2},
 			#{anno_regdate},
+			#{anno_c_regdate},
 			#{anno_title}
 		)
 		

@@ -13,6 +13,6 @@
 		<typeAlias alias="ResumeContect" type="com.oracle.s20210904.comm.model.ResumeContect"/>
 		<typeAlias alias="ResumeDetail" type="com.oracle.s20210904.comm.model.ResumeDetail"/>
 		<typeAlias alias="Scrap" type="com.oracle.s20210904.comm.model.Scrap"/>
-		<typeAlias alias="User" type="com.oracle.s20210904.comm.model.User"/>
+		<typeAlias alias="Member" type="com.oracle.s20210904.comm.model.Member"/>
 	</typeAliases>
 </configuration>

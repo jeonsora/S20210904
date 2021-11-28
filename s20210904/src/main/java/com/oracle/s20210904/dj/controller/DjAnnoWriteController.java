@@ -131,8 +131,7 @@ public class DjAnnoWriteController {
 	public String annoWriting(Model model,Company comp, Announce anno) {
 		System.out.println("컨트롤러에서 annoWriting 시작되었습니다. ");
 		
-		System.out.println("anno.getAnno_title()->"+anno.getAnno_code());
-		System.out.println("anno.getTech_tag2()->"+anno.getCom_id());
+		System.out.println("anno.getCom_id()->"+anno.getCom_id());
 		System.out.println("anno.getCom_bus()->"+anno.getCom_bus());
 		System.out.println("anno.getRec_vol()->"+anno.getRec_vol());
 		System.out.println("anno.getRec_dtl()->"+anno.getRec_dtl());
@@ -146,6 +145,7 @@ public class DjAnnoWriteController {
 		System.out.println("anno.getTech_tag1()->"+anno.getTech_tag1());
 		System.out.println("anno.getTech_tag2()->"+anno.getTech_tag2());
 		System.out.println("anno.getAnno_regdate()->"+anno.getAnno_regdate());
+		System.out.println("anno.getAnno_c_regdate()->"+anno.getAnno_c_regdate());
 		System.out.println("anno.getAnno_title()->"+anno.getAnno_title());
 		
 		// 1. 공고 작성 사항 입력하기
