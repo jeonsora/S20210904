@@ -36,14 +36,15 @@
 		}
 	}
 
-	function resume_update(res_code){	
-		var form=document.paging; 	//폼 name
+/* 	function resume_update(res_code){	
+		alert("11");
+		var form=document.paging; 				//폼 name
 	    form.res_code.value = res_code; 		//POST방식으로 넘기고 싶은 값
-
+	    
 	    form.action = "mbMypageResumeUpdate";
         form.method = "post"; 
         form.submit();
-	}
+	} */
 
 
 
@@ -58,7 +59,7 @@ ${mbid }의 이력서<br>
 <c:forEach var="resumelist" items="${resumelist}" varStatus="status">
 	${status.count} &nbsp;&nbsp; ${resumelist.res_title} &nbsp;&nbsp; ${resumelist.res_date} &nbsp;&nbsp; ${resumelist.rep_res}
 	&nbsp;&nbsp; ${resumelist.comm_ctx} &nbsp;&nbsp; &nbsp;&nbsp; <input type="button" value="대표이력서">
-	&nbsp;&nbsp; &nbsp;&nbsp; <input type="button" onclick="resume_update(${resumelist.res_code})" value="수정">
+	&nbsp;&nbsp; &nbsp;&nbsp; <input type="submit" onclick="location.href='mbMypageResumeUpdate?res_code=${resumelist.res_code}'" value="수정">
 	&nbsp;&nbsp; &nbsp;&nbsp; <input type="button" onclick="resume_delete(${resumelist.res_code})" value="삭제"><br>
 </c:forEach><p>
 

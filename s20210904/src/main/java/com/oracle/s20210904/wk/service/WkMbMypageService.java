@@ -33,4 +33,6 @@ public interface WkMbMypageService {
 
 	int resumeDelete(Resume resume);
 
+	Resume resumeSelect(Resume resume);
+
 }

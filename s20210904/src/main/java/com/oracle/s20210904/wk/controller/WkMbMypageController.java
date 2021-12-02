@@ -142,7 +142,7 @@ public class WkMbMypageController {
 	
 	
 	
-	@RequestMapping(value = "mbMypageResumeUpdate", method = RequestMethod.POST)
+	@RequestMapping(value = "mbMypageResumeUpdate", method = RequestMethod.GET)
 	public String mbMypageResumeUpdate(HttpServletRequest request, Model model, int res_code) {
 		System.out.println("WkMbMypageController mbMypageResumeUpdate()");
 		String mbid=checkId(request);
@@ -150,7 +150,8 @@ public class WkMbMypageController {
 		Resume resume=new Resume();
 		resume.setUser_id(mbid);
 		resume.setRes_code(res_code);
-		System.out.println("temp1 res_code : "+res_code);
+		
+		resume=ms.resumeSelect(resume);
 		
 		return "/wk/mbMypageResumeUpdate"; 
 	}
