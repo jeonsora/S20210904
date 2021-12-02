@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ScrapDao">
+	<select id="WkScrapList" resultType="WkScrap" parameterType="String">
+		select s.*,c.com_name ,a.anno_title, a.com_id, a.rec_vol, a.emp_type, comm.comm_ctx, a.rec_edu, a.pay_info, a.work_cdt,
+        a.anno_regdate, a.anno_c_regdate
+		from scrap s
+		inner join announce a
+		on s.anno_code = a.anno_code
+		inner join company c
+		on c.com_id=a.com_id
+		inner join comm
+		on a.career=comm.sub_cat
+		where s.user_id=#{mbid}
+		and comm.main_cat='070'
+		order by s.scr_date desc
+	</select>
+	
+	<select id="WkScrapCount" resultType="int" parameterType="String">
+		select count(*)
+		from scrap
+		where user_id=#{mbid}
+	</select>
+	
+	
+</mapper>

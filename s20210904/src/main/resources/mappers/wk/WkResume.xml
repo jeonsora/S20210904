@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ResumeDao">
+	<select id="WkResumeSum" resultType="WkResume" parameterType="String">
+		select r.res_code ,r.res_title, r.res_date, r.rep_res, c.comm_ctx
+		from resume r
+		inner join comm c
+		on r.res_sts=c.sub_cat 
+		where r.user_id =#{mbid}
+		and r.res_sts!='003'
+		and c.main_cat='065'
+	</select>
+	
+	<select id="WkResumeMaxRescode" parameterType="String" resultType="int">
+		select max(res_code) 
+		from S20210904.RESUME
+		where user_id=#{user_id}
+	</select>
+	
+	<insert id="WkResumeWrite" parameterType="WkResume">
+		Insert into S20210904.RESUME (user_id,res_code,res_sts,res_title,rep_res,res_email,
+			res_img,hs_name,hs_mjr,univ_name,univ_date,univ_mjr,cov_let,res_date,
+			res_tag1,res_tag2,res_tag3,res_etc_link,res_etc_file) 
+		values (#{user_id},#{res_code},#{res_sts},#{res_title},#{rep_res},#{res_email},
+			#{res_img},#{hs_name},#{hs_mjr},#{univ_name},#{univ_date},#{univ_mjr},#{cov_let},sysdate,
+			#{res_tag1},#{res_tag2},#{res_tag3},#{res_etc_link},#{res_etc_file})
+	</insert>
+	
+	<delete id="WkResumeDelete" parameterType="Resume">
+		delete from S20210904.RESUME
+		where user_id=#{user_id}
+		and res_code=#{res_code}
+	</delete>
+	
+</mapper>
