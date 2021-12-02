@@ -65,7 +65,7 @@
 						<th >아이디</th><th>기업명</th><th></th>
 					</tr>
 					<c:if test="${ctotCnt==0 }">
-						<tr><td>기업목록이 비어있어욤</td></tr>
+						<tr><td colspan="3">기업목록이 비어있어욤</td></tr>
 					</c:if>
 					<c:if test="${ctotCnt > 0 }">
 						<c:forEach var="comList" items="${companyList}">
@@ -95,7 +95,7 @@
 							<th >아이디</th><th>기업명</th><th></th>
 						</tr>
 						<c:if test="${cctotCnt==0 }">
-							<tr><td>기업목록이 비어있어욤</td></tr>
+							<tr><td colspan="3">기업목록이 비어있어욤</td></tr>
 						</c:if>
 						<c:if test="${cctotCnt > 0 }">
 							<c:forEach var="comConfirmList" items="${companyConfirmList}">

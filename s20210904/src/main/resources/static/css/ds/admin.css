@@ -227,3 +227,33 @@
 	margin-top: 10px;
 	margin-right: 10%;
 }
+.QnABox{
+	border: 1px solid black;
+	display:flex;
+	flex-direction:column;
+	width:42.5%;
+	height:1000px;
+}
+.QnABox>table{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.notice{
+	border: 1px solid black;
+	display:flex;
+	flex-direction:column;
+	width:42.5%;
+	height:1000px;
+}
+.notice>table{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.tagList {
+	width: 80%;
+	margin-top: 3%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}

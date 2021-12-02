@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<%response.sendRedirect("Comjoin"); %>
+<%-- 	<%response.sendRedirect("Comjoin"); %> --%>
 
 <%-- 	<%response.sendRedirect("CompanyMypage"); %> --%>
 	 <%response.sendRedirect("AdminMain"); %> 

@@ -25,5 +25,10 @@ public interface DsAdminDao {
 	Company getCompany(Company com);
 	int ttotCnt();
 	List<DsComm> getDsCommList(DsComm dsComm);
+	int qtotCnt();
+	int ntotCnt();
+	List<Post> getQnaList(Post post);
+	List<Post> getNoticeList(Post post);
+	int memberDel(String user_id);
 
 }

@@ -10,4 +10,28 @@
 		]]>
 	</select>
 	
+	<select id="DsqtotCnt" resultType="int">
+		<![CDATA[
+		SELECT count(*) FROM post where brd_code='Q&A'
+		]]>
+	</select>
+	
+	<select id="DsntotCnt" resultType="int">
+		<![CDATA[
+		SELECT count(*) FROM post where brd_code='공지'
+		]]>
+	</select>
+	
+	<select id="DsNoticeList" resultType="Post" parameterType="Post">
+		SELECT a.* FROM (select rownum rn,p.* from post p where brd_code='공지' order by ref desc, ref_lev, ref_step) a
+		where rn between #{start} and #{end}
+	</select>
+	
+	<select id="DsQnAList" resultType="Post" parameterType="Post">
+		<![CDATA[
+		SELECT a.* FROM (select rownum rn,p.* from post p where brd_code='Q&A' order by ref desc, ref_lev, ref_step) a
+		where rn between #{start} and #{end}
+		]]>
+	</select>
+	
 </mapper>

@@ -31,7 +31,7 @@ public class DsAdminDaoImpl implements DsAdminDao {
 		
 		return result;
 	}
-	
+	// 페이징 안된 QnA
 	@Override
 	public List<Post> getQnaList() {
 		List<Post> qnaList = session.selectList("DsQnaList");
@@ -102,5 +102,32 @@ public class DsAdminDaoImpl implements DsAdminDao {
 	public List<DsComm> getDsCommList(DsComm dsComm) {
 		List<DsComm> dsCommList = session.selectList("DsCommList",dsComm);
 		return dsCommList;
+	}
+	
+	@Override
+	public List<Post> getNoticeList(Post post) {
+		List<Post> noticeList = session.selectList("DsNoticeList",post);
+		return noticeList;
+	}
+	// 페이징 QnA
+	@Override
+	public List<Post> getQnaList(Post post) {
+		List<Post> qnaList = session.selectList("DsQnAList",post);
+		return qnaList;
+	}
+	@Override
+	public int ntotCnt() {
+		int ntotCnt = session.selectOne("DsntotCnt");
+		return ntotCnt;
+	}
+	@Override
+	public int qtotCnt() {
+		int qtotCnt = session.selectOne("DsqtotCnt");
+		return qtotCnt;
+	}
+	@Override
+	public int memberDel(String user_id) {
+		int result = session.update("DsMemberDel",user_id);
+		return result;
 	}
 }

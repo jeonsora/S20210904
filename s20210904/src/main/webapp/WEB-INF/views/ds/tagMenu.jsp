@@ -36,7 +36,7 @@
 				<span class="subject">태그관리</span>
 				<span class="search"><input type="text" class="searchTxt"><input type="button" value="검색" class="searchBtn"></span>
 				<span class="addTag"><input type="button" value="태그추가"></span>
-				<table class="memberList">
+				<table class="tagList">
 					<tr class="title">
 						<th >태그명</th><th>번호</th><th>분류</th><th></th>
 					</tr>

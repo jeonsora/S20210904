@@ -102,4 +102,29 @@ public class DsAdminServiceImpl implements DsAdminService {
 		List<DsComm> dsCommList = dsAdminDao.getDsCommList(dsComm);
 		return dsCommList;
 	}
+	@Override
+	public List<Post> getNoticeList(Post post) {
+		List<Post> noticeList = dsAdminDao.getNoticeList(post);
+		return noticeList;
+	}
+	@Override
+	public List<Post> getQnaList(Post post) {
+		List<Post> qnaList = dsAdminDao.getQnaList(post);
+		return qnaList;
+	}
+	@Override
+	public int ntotCnt() {
+		int ntotCnt = dsAdminDao.ntotCnt();
+		return ntotCnt;
+	}
+	@Override
+	public int qtotCnt() {
+		int qtotCnt = dsAdminDao.qtotCnt();
+		return qtotCnt;
+	}
+	@Override
+	public int memberDel(String user_id) {
+		int result = dsAdminDao.memberDel(user_id);
+		return result;
+	}
 }

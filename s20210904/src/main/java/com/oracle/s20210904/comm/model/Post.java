@@ -20,4 +20,7 @@ public class Post {
 	private int    ref;            // 답글
 	private int    ref_lev;
 	private int    ref_step;
+	
+	private int start;
+	private int end;
 }

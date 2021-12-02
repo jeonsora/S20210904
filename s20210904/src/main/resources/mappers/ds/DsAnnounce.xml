@@ -7,8 +7,9 @@
 	<select id="DsAnnounceCnt" resultType="AnnounceCnt">
 		<![CDATA[
 		select a.*, c.comm_ctx job_name 
-		from (select * from comm where main_cat = '001') c, (select a.job_tag, count(job_tag) ann_cnt from announce a group by job_tag order by ann_cnt desc) a
-		where a.job_tag = c.sub_cat and rownum <= 5
+		from (select * from comm where main_cat = '001') c, (select rownum rn, a.* from (select a.job_tag, count(job_tag) ann_cnt from announce a group by job_tag order by ann_cnt desc) a) a 
+		where a.job_tag = c.sub_cat  and rn <= 5
+        order by rn
 		]]>
 	</select>
 	

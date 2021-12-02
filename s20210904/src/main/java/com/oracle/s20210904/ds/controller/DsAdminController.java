@@ -48,7 +48,7 @@ public class DsAdminController {
 	}
 	
 	@GetMapping(value="memberMenu")
-	public String memberMenu(Member member, Model model, String currentPage) {
+	public String memberMenu(Member member, Model model, String currentPage, String searchTxt) {
 		
 		int mtotCnt = dsAdminService.totCnt();
 		System.out.println("mtotCnt->"+mtotCnt);
@@ -57,7 +57,7 @@ public class DsAdminController {
 		
 		member.setStart(pg.getStart());   // 1
 		member.setEnd(pg.getEnd());       // 10
-		System.out.println("getUserList Start... getStart->"+pg.getStart()+"getEnd->"+pg.getEnd());
+		
 		List<Member> userList = dsAdminService.getUserList(member);
 		
 		System.out.println("userList.size()->"+userList.size());
@@ -96,8 +96,29 @@ public class DsAdminController {
 	}
 	
 	@GetMapping(value="boardMenu")
-	public String boardMenu() {
+	public String boardMenu(Model model ,String currentPage, String currentPage2) {
+		Post post = new Post();
+		// Qna 리스트 페이징~
+		int qtotCnt = dsAdminService.qtotCnt();
+		Paging pg = new Paging(qtotCnt,currentPage);
+		post.setStart(pg.getStart());
+		post.setEnd(pg.getEnd());
 		
+		List<Post> qnaList = dsAdminService.getQnaList(post);
+		model.addAttribute("qnaList",qnaList);
+		model.addAttribute("pg",pg);
+		model.addAttribute("qtotCnt",qtotCnt);
+		
+		// notice 리스트 페이징~
+		int ntotCnt = dsAdminService.ntotCnt();
+		Paging pg2 = new Paging(ntotCnt,currentPage2);
+		post.setStart(pg2.getStart());
+		post.setEnd(pg.getEnd());
+		
+		List<Post> noticeList = dsAdminService.getNoticeList(post);
+		model.addAttribute("noticeList",noticeList);
+		model.addAttribute("pg2",pg2);
+		model.addAttribute("ntotCnt",ntotCnt);
 		return "ds/boardMenu";
 	}
 	
@@ -115,4 +136,6 @@ public class DsAdminController {
 		
 		return "ds/tagMenu";
 	}
+	
+
 }

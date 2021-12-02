@@ -27,4 +27,10 @@ public class DsAdminRestController {
 		Company company = dsAdminService.getCompany(com);
 		return company;
 	}
+	
+	@GetMapping(value="memberDel")
+	public int memberDel(String user_id) {
+		int result= dsAdminService.memberDel(user_id);
+		return result;
+	}
 }

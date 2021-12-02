@@ -8,6 +8,22 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/ds/admin.css" type="text/css">
 <link rel="stylesheet" href="css/reset.css" type="text/css">
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+		function memberDelete(Vuser_id){
+			 console.log(Vuser_id);
+			$.ajax({
+				url:"memberDel",  
+				data:{user_id : Vuser_id},
+				dataType:'Json',
+				success:function(data){     
+					location.reload();
+				}
+			});
+
+		}
+</script>
 </head>
 <body>
 	<div class="body">
@@ -34,7 +50,9 @@
 		</div>
 		<div id="memberListbox" class="memberListbox" >
 				<span class="subject">회원관리</span>
-				<span class="search"><input type="text" class="searchTxt"><input type="button" value="검색" class="searchBtn"></span>
+				<form action="memberSearch">
+					<span class="search"><input type="text" class="searchTxt"><input type="submit" value="검색" class="searchBtn"></span>
+				</form>
 				<table class="memberList">
 					<tr class="title">
 						<th >아이디</th><th>이름</th><th></th>
@@ -45,7 +63,7 @@
 					<c:if test="${mtotCnt > 0 }">
 						<c:forEach var="usList" items="${userList}">
 							<tr>
-								<td>${usList.user_id}</td><td>${usList.user_name}</td><td><input type="button" value="삭제"></td>
+								<td>${usList.user_id}</td><td>${usList.user_name}</td><td><input type="button" value="삭제" onclick="memberDelete('${usList.user_id}')"></td>
 							</tr>
 						</c:forEach>
 					</c:if>
