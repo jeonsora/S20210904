@@ -11,6 +11,7 @@ public class Resume {
 	private String user_id;
 	private int res_code;
 	private String res_sts;
+	private String res_title;
 	private String rep_res;
 	private String res_email;
 	private String res_img;
@@ -26,4 +27,9 @@ public class Resume {
 	private String res_tag3;
 	private String res_etc_link;
 	private String res_etc_file;
+	
+	// 조회용
+	private String pageNum;
+	private int start;
+	private int end;
 }
