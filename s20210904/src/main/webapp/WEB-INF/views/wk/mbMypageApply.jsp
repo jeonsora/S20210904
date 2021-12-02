@@ -21,7 +21,7 @@
 			<tr>
 				<td>${applyList.com_name}</td><td>${applyList.comm_ctx}</td>
 				<td>${applyList.res_title}</td><td>${applyList.app_regdate}</td>
-				<td>${applyList.app_sts}</td>
+				<td>${applyList.com_app_sts}</td>
 			</tr>
 		</c:forEach>
 	</tr>

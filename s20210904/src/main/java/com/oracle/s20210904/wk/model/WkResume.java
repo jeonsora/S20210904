@@ -50,12 +50,13 @@ public class WkResume{
 //	@ManyToOne
 //	@JoinColumn
 //	private Comm comm;
-	
 	@Transient
 	private String comm_ctx;
 	@Transient
 	private String main_cat;
 	@Transient
 	private String sub_cat;
+	
+//	WkResumeDetail
 	
 }

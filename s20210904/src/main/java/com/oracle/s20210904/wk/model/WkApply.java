@@ -21,6 +21,7 @@ public class WkApply {
 //	comm table
 	@Transient
 	private String comm_ctx;
+	private String com_app_sts;
 	
 //	resume table
 	@Transient
