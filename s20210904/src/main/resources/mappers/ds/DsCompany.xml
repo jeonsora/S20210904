@@ -13,6 +13,14 @@
 		UPDATE company SET com_grade=1 WHERE com_id = #{com_id}
 	</update>
 	
+	<update id="DsJoinRefuse" parameterType="String">
+		UPDATE company SET com_grade=2 WHERE com_id = #{com_id}
+	</update>
+	
+	<update id="DsCompanyDel" parameterType="String">
+		UPDATE company SET com_grade=-1 WHERE com_id = #{com_id}
+	</update>
+	
 	<select id="DscTotCnt" resultType="int">
 		select count(*) from company where com_grade=1
 	</select>

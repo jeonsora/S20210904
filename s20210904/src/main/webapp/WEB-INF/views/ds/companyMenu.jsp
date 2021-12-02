@@ -32,14 +32,56 @@
 
 		}
 </script>
+<script type="text/javascript">
+		function joinConfirm(com_id){
+			 console.log(com_id);
+			$.ajax({
+				url:"<%=context%>/joinConfirm",  
+				data:{comId : com_id},
+				dataType:'text',
+				success:function(data){     
+					location.reload();
+				}
+			});
+
+		}
+</script>
+<script type="text/javascript">
+		function joinRefuse(com_id){
+			 console.log(com_id);
+			$.ajax({
+				url:"<%=context%>/joinRefuse",  
+				data:{comId : com_id},
+				dataType:'text',
+				success:function(data){     
+					location.reload();
+				}
+			});
+
+		}
+</script>
+<script type="text/javascript">
+		function companyDel(com_id){
+			 console.log(com_id);
+			$.ajax({
+				url:"<%=context%>/companyDel",  
+				data:{comId : com_id},
+				dataType:'text',
+				success:function(data){     
+					location.reload();
+				}
+			});
+
+		}
+</script>
 </head>
 <body>
 	<div class="body">
 
 		<div class="nav">
 			<div class="alram">
-				<span class="alram_btn"> <img src="#"><a href="#">미답변</a>&nbsp;&nbsp;
-										 <img src="#"><a href="#">미승인</a>
+				<span class="alram_btn"> <img src="#"><a href="boardMenu">미답변</a>&nbsp;&nbsp;
+										 <img src="#"><a href="companyMenu">미승인</a>
 				</span>
 			</div>
 			<div class=navBtn>
@@ -70,7 +112,7 @@
 					<c:if test="${ctotCnt > 0 }">
 						<c:forEach var="comList" items="${companyList}">
 							<tr>
-								<td onmouseover="companyDetail('${comList.com_id}')">${comList.com_id}</td><td>${comList.com_name}</td><td><input type="button" value="삭제"></td>
+								<td onmouseover="companyDetail('${comList.com_id}')">${comList.com_id}</td><td>${comList.com_name}</td><td><input type="button" value="삭제" onclick="companyDel('${comList.com_id}')"></td>
 							</tr>
 						</c:forEach>
 					</c:if>
@@ -89,7 +131,7 @@
 			</div>
 			<div class="companyConfirmList">
 					<span class="subject">가입승인</span>
-					<span class="search"><input type="text" class="searchTxt"><input type="button" value="검색" class="searchBtn"></span>
+					<span class="search"><input type="text" class="searchTxt" ><input type="button" value="검색" class="searchBtn"></span>
 					<table class="memberList">
 						<tr class="title">
 							<th >아이디</th><th>기업명</th><th></th>
@@ -101,7 +143,7 @@
 							<c:forEach var="comConfirmList" items="${companyConfirmList}">
 								<tr>
 									<td onmouseover="companyDetail('${comConfirmList.com_id}')">${comConfirmList.com_id}</td><td>${comConfirmList.com_name}</td>
-									<td><input type="button" value="승인"><input type="button" value="거절"></td>
+									<td><input type="button" value="승인" onclick="joinConfirm('${comConfirmList.com_id}')"><input type="button" value="거절" onclick="joinRefuse('${comConfirmList.com_id}')"></td>
 								</tr>
 							</c:forEach>
 						</c:if>

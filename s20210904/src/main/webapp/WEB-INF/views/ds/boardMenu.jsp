@@ -14,8 +14,8 @@
 
 		<div class="nav">
 			<div class="alram">
-				<span class="alram_btn"> <img src="#"><a href="#">미답변</a>&nbsp;&nbsp;
-										 <img src="#"><a href="#">미승인</a>
+				<span class="alram_btn"> <img src="#"><a href="boardMenu">미답변</a>&nbsp;&nbsp;
+										 <img src="#"><a href="companyMenu">미승인</a>
 				</span>
 			</div>
 			<div class=navBtn>
@@ -35,7 +35,7 @@
 
 		<div class="QnABox">
 			<span class="subject">QnA</span>
-			<table>
+			<table class="boardTable">
 				<tr class="title">
 					<th>작성자</th><th>제목</th><th></th>
 				</tr>
@@ -66,7 +66,7 @@
 		</div>
 		<div class="notice">
 			<span class="subject">공지사항</span>
-			<table>
+			<table class="boardTable">
 				<tr class="title">
 					<th>작성자</th><th>제목</th><th></th>
 				</tr>
@@ -96,5 +96,6 @@
 			</ul>
 		</div>
 	</div>
+
 </body>
 </html>

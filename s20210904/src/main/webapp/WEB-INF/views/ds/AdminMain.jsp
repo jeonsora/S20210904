@@ -31,15 +31,28 @@
 
 		}
 </script>
-
+<!-- 기업 거절 ajax  -->
+<script type="text/javascript">
+		function joinRefuse(com_id){
+			 console.log(com_id);
+			$.ajax({
+				url:"<%=context%>/joinRefuse",  
+				data:{comId : com_id},
+				dataType:'text',
+				success:function(data){     
+					$(".comConfirm").load(window.location.href+" .confirmContext"); 
+				}
+			});
+		}
+</script>
 </head>
 <body>
 	<div class="body">
 
 		<div class="nav">
 			<div class="alram">
-				<span class="alram_btn"> <img src="#"><a href="#">미답변</a>&nbsp;&nbsp;
-										 <img src="#"><a href="#">미승인</a>
+				<span class="alram_btn"> <img src="#"><a href="boardMenu">미답변</a>&nbsp;&nbsp;
+										 <img src="#"><a href="companyMenu">미승인</a>
 				</span>
 			</div>
 			<div class=navBtn>
@@ -61,7 +74,7 @@
 				<div class="QnA">
 					<ul>
 						<li>QnA</li>
-						<li><a href="#">>더보기</a></li>
+						<li><a href="boardMenu">>더보기</a></li>
 					</ul>
 					<table class="QnAlist">
 						<tr>
@@ -91,7 +104,6 @@
 			<div id="box1" class="announceCount">
 				<ul>
 					<li>직종별 공고수</li>
-					<li><a href="#">>더보기</a></li>
 				</ul>
 
 					<canvas id="myChart"></canvas>
@@ -117,10 +129,11 @@
 							varStatus="status">
 							<c:if test="${status.index < 5 }">
 								<tr>
-									<td class="waitItem">${waitComList.com_name}<input
-										type="button" value="확인" class="confirmBtn" name="confirmBtn"
-										onclick="joinConfirm('${waitComList.com_id}')"> <input
-										type="button" value="취소" name="joinCancle">
+									<td class="waitItem">${waitComList.com_name}
+									<input	type="button" value="확인" class="confirmBtn" name="confirmBtn"
+											onclick="joinConfirm('${waitComList.com_id}')"> 
+									<input	type="button" value="취소" name="joinCancle"
+											onclick="joinRefuse('${waitComList.com_id}')">
 									</td>
 								</tr>
 							</c:if>
@@ -133,7 +146,7 @@
 			<div class="announceBoard">
 				<ul>
 					<li>공고현황</li>
-					<li><a href="#">>더보기</a></li>
+					<li><a href="boardMenu">>더보기</a></li>
 				</ul>
 				<table>
 					<tr>

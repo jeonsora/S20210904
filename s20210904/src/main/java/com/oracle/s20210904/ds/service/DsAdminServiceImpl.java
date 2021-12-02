@@ -127,4 +127,15 @@ public class DsAdminServiceImpl implements DsAdminService {
 		int result = dsAdminDao.memberDel(user_id);
 		return result;
 	}
+	
+	@Override
+	public int joinRefuse(String comId) {
+		int result = dsAdminDao.joinRefuse(comId);
+		return result;
+	}
+	@Override
+	public int companyDel(String comId) {
+		int result = dsAdminDao.companyDel(comId);
+		return result;
+	}
 }

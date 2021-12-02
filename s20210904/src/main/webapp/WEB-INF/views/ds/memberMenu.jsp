@@ -30,8 +30,8 @@
 
 		<div class="nav">
 			<div class="alram">
-				<span class="alram_btn"> <img src="#"><a href="#">미답변</a>&nbsp;&nbsp;
-										 <img src="#"><a href="#">미승인</a>
+				<span class="alram_btn"> <img src="#"><a href="boardMenu">미답변</a>&nbsp;&nbsp;
+										 <img src="#"><a href="companyMenu">미승인</a>
 				</span>
 			</div>
 			<div class=navBtn>

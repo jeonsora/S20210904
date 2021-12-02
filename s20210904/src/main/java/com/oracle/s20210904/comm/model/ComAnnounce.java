@@ -22,6 +22,8 @@ public class ComAnnounce {
 	private String com_mgr_tel;
 	private String com_web;
 	private String com_img;
+	private String com_user;
+	
 	
 	// announce
 	private String anno_code;

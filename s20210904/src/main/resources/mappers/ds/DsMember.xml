@@ -5,16 +5,16 @@
 	
 	<!-- QnA 게시글 목록 -->
 	<select id="DsTotCnt" resultType="int">
-		select count(*) from member where user_grade=0
+		select count(*) from member where user_status=0
 	</select>
 	
 	<select id="DsMemberList" resultType="Member" parameterType="Member">
-		select a.* from (select rownum rn, m.* from member m where user_grade=0 order by rn ) a
+		select a.* from (select rownum rn, m.* from member m where user_status=0 order by rn ) a
 		where rn between #{start} and #{end}
 	</select>
 	
 	<!-- 멤버 삭제  -->
 	<update id="DsMemberDel" parameterType="String">
-			Update member set user_grade=-1 where user_id=#{user_id}
+			Update member set user_status=-1 where user_id=#{user_id}
 	</update>	
 </mapper>

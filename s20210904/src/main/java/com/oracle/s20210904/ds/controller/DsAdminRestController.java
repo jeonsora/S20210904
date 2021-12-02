@@ -33,4 +33,17 @@ public class DsAdminRestController {
 		int result= dsAdminService.memberDel(user_id);
 		return result;
 	}
+	
+	@GetMapping(value="joinRefuse")
+	public int joinRefuse(String comId) {
+		int result = dsAdminService.joinRefuse(comId);
+		return result;
+	}
+	
+	@GetMapping(value="companyDel")
+	public int companyDel(String comId) {
+		int result = dsAdminService.companyDel(comId);
+		return result;
+	}
+	
 }

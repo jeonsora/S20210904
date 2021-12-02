@@ -9,13 +9,21 @@
 <link rel="stylesheet" href="css/ds/admin.css" type="text/css">
 <link rel="stylesheet" href="css/reset.css" type="text/css">
 </head>
+<script type="text/javascript">
+	function modalOn() {
+		document.querySelector(".modalBack").style.display="flex";
+	}
+	function modalOff() {
+		document.querySelector(".modalBack").style.display="none";
+	}
+</script>
 <body>
 	<div class="body">
 
 		<div class="nav">
 			<div class="alram">
-				<span class="alram_btn"> <img src="#"><a href="#">미답변</a>&nbsp;&nbsp;
-										 <img src="#"><a href="#">미승인</a>
+				<span class="alram_btn"> <img src="#"><a href="boardMenu">미답변</a>&nbsp;&nbsp;
+										 <img src="#"><a href="companyMenu">미승인</a>
 				</span>
 			</div>
 			<div class=navBtn>
@@ -35,7 +43,7 @@
 		<div id="memberListbox" class="memberListbox" >
 				<span class="subject">태그관리</span>
 				<span class="search"><input type="text" class="searchTxt"><input type="button" value="검색" class="searchBtn"></span>
-				<span class="addTag"><input type="button" value="태그추가"></span>
+				<span class="addTag"><input type="button" value="태그추가" onclick="modalOn()"></span>
 				<table class="tagList">
 					<tr class="title">
 						<th >태그명</th><th>번호</th><th>분류</th><th></th>
@@ -64,6 +72,18 @@
 				</ul>
 
 		</div>
+	</div>
+	<div class="modalBack">
+
+			<form action="tagInsert">
+				<div class="modal">
+					<span>대번호 <input type="text" name="big" required="required"></span>
+					<span>중번호 <input type="text" name="center" required="required"></span>
+					<span>태그명 <input type="text" name="tagName" required="required"></span>
+					<div class="modalBtn"><input type="submit" value="추가하기"><input type="button" value="취소" onclick="modalOff()"></div>
+				</div>
+			</form>
+
 	</div>
 </body>
 </html>

@@ -30,5 +30,7 @@ public interface DsAdminDao {
 	List<Post> getQnaList(Post post);
 	List<Post> getNoticeList(Post post);
 	int memberDel(String user_id);
+	int joinRefuse(String comId);
+	int companyDel(String comId);
 
 }

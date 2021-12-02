@@ -130,4 +130,15 @@ public class DsAdminDaoImpl implements DsAdminDao {
 		int result = session.update("DsMemberDel",user_id);
 		return result;
 	}
+	@Override
+	public int joinRefuse(String comId) {
+		int result = session.update("DsJoinRefuse",comId);
+		return result;
+	}
+	
+	@Override
+	public int companyDel(String comId) {
+		int result = session.update("DsCompanyDel",comId);
+		return result;
+	}
 }

@@ -10,6 +10,7 @@ import lombok.Setter;
 public class Resume {
 	private String user_id;
 	private int res_code;
+	private String res_title;
 	private String res_sts;
 	private String rep_res;
 	private String res_email;
@@ -26,4 +27,8 @@ public class Resume {
 	private String res_tag3;
 	private String res_etc_link;
 	private String res_etc_file;
+	
+	private int start;
+	private int end;
+	private int pageNum;
 }
