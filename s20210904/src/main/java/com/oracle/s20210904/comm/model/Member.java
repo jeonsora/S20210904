@@ -16,4 +16,6 @@ public class Member {
 	private String user_tel;
 	private String user_email;
 	private String user_img;
+	private int start;
+	private int end;
 }

@@ -12,5 +12,23 @@
 	<update id="DsJoinConfirm" parameterType="String">
 		UPDATE company SET com_grade=1 WHERE com_id = #{com_id}
 	</update>
+	
+	<select id="DscTotCnt" resultType="int">
+		select count(*) from company where com_grade=1
+	</select>
+	
+	<select id="DsccTotCnt" resultType="int">
+		select count(*) from company where com_grade=0
+	</select>
+	
+	<select id="DsCompanyList" parameterType="Company" resultType="Company">
+		select a.* from (select rownum rn, c.* from Company c where com_grade=1) a
+		where rn between #{start} and #{end}
+	</select>
+	
+	<select id="DsComConfirmList" parameterType="Company" resultType="Company">
+		select a.* from (select rownum rn, c.* from Company c where com_grade=0) a
+		where rn between #{start} and #{end}
+	</select>
 
 </mapper>
