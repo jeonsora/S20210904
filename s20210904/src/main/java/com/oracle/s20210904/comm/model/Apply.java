@@ -10,7 +10,7 @@ import lombok.Setter;
 public class Apply {
 	private String user_id;
 	private int res_code;
-	private String anno_code;
+	private String conno_code;
 	private String app_sts;
 	private Date app_regdate;
 	private String com_ntc_code;

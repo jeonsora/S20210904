@@ -1,6 +1,7 @@
 package com.oracle.s20210904.comm.model;
 
 import lombok.Setter;
+
 import lombok.Getter;
 
 @Getter

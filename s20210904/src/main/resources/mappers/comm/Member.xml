@@ -6,7 +6,7 @@
 		select * from member order by user_id
 	</select>
 	
-	<select id="memberSelectOne" parameterType="String" resultType="Member">
+	<select id="memberSelectOne" parameterType="Member" resultType="Member">
 		select * from member 
 		where user_id=#{user_id}
 	</select>

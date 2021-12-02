@@ -190,6 +190,11 @@ public class GmAnnoListController {
 
 		 }
 		
+	
+		
+		
+	
+		
 		@PostMapping (value = "likeupdate")
 		@ResponseBody
 		public Map<String, String> likeupdate (Scrap scrap){
@@ -262,7 +267,7 @@ public class GmAnnoListController {
 			System.out.println("Controller resume.getUser_id()->"+resume.getUser_id());
 			System.out.println("Controller resume.getRes_code()->"+resume.getRes_code());
 			
-			 
+			
 			
 			return "1";
 

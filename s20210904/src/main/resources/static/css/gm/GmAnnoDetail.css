@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+.detail {
+	margin-top: 5%;
+	/* background: #FFD700; */
+	
+}
+
+.detail_title {
+	align-items: center;
+	text-align: center;
+	/* border: solid black; */
+}
+
+h2{
+	font-size: 30px;
+	font-style: bold;
+}
+
+.com_name{
+	margin-top: 2%;
+	font-size: 30px;
+	font-style: bold;
+}
+
+.com_name > input{
+	position: right;
+	
+}
+
+.com_title{
+	margin-top: 2%;
+	font-size: 20px;
+	
+}
+
+table.anno_content{
+	margin-left: 17%;
+	margin-top: 2%;
+	align-items: center;
+	text-align: center;
+	border: solid black;
+	height: 300px;
+	width: 1025px;
+	/* background: green; */
+	font-size: 18px;
+}
+
+h3{
+	margin-top: 4%;
+	font-size: 25px;
+	font-style: bold;
+	text-align: center;
+	
+}
+
+th{
+	text-align: center;
+	border: solid;
+	height: 60px;
+	width: 200px;
+}
+
+td{
+	text-align: center;
+	border: solid;
+	height: 60px;
+}
+
+table.anno_condition{
+	margin-left: 17%;
+	margin-top: 2%;
+	align-items: center;
+	text-align: center;
+	border: solid black;
+	height: 200px;
+	width: 1025px;
+	/* background: green; */
+	font-size: 18px;
+}
+
+table.com_info{
+	margin-left: 17%;
+	margin-top: 2%;
+	align-items: center;
+	text-align: center;
+	border: solid black;
+	height: 200px;
+	width: 1025px;
+	/* background: green; */
+	font-size: 18px;
+}
+
+table.anno_date{
+	margin-left: 17%;
+	margin-top: 2%;
+	border: solid black;
+	height: 100px;
+	width: 1025px;
+	/* background: green; */
+	font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
