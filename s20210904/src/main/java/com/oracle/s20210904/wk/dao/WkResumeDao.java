@@ -13,4 +13,6 @@ public interface WkResumeDao {
 
 	int resumeDelete(Resume resume);
 
+	Resume resumeselect(Resume resume);
+
 }

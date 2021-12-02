@@ -158,7 +158,7 @@ public class WkMbMypageServiceImpl implements WkMbMypageService{
 
 	@Override
 	public Resume resumeSelect(Resume resume) {
-		return resume;
+		return wkResumeDao.resumeselect(resume);
 	}
 
 	

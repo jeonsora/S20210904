@@ -150,9 +150,20 @@ public class WkMbMypageController {
 		Resume resume=new Resume();
 		resume.setUser_id(mbid);
 		resume.setRes_code(res_code);
-		
+		boolean res_select_msg=false;
 		resume=ms.resumeSelect(resume);
-		
+		if(resume!=null && !resume.getRes_sts().equals("003")) {
+			res_select_msg=true;
+			model.addAttribute("resumedetail", resume);
+			String main_cat="062";
+			List<WkCommDto> commlist=ms.commList(main_cat);
+			model.addAttribute("commlist", commlist);
+			
+			Member memberdetail=ms.memberDetail(mbid);
+			model.addAttribute("memberdetail", memberdetail);
+			
+		}
+		model.addAttribute("res_select_msg", res_select_msg);
 		return "/wk/mbMypageResumeUpdate"; 
 	}
 	

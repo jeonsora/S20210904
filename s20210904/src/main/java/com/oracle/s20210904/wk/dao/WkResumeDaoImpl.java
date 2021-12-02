@@ -63,6 +63,20 @@ public class WkResumeDaoImpl implements WkResumeDao{
 		}
 		return result;
 	}
+
+
+	@Override
+	public Resume resumeselect(Resume resume) {
+		System.out.println("WkResumeDaoImpl resumeselect()");
+		Resume result=null;
+		try {
+			result=session.selectOne("resumeSelectOne", resume);
+			System.out.println("WkResumeDaoImpl resumeselect() result res_code : "+result.getRes_code());
+		} catch (Exception e) {
+			System.out.println("WkResumeDaoImpl resumeselect() error : "+e.getMessage());
+		}
+		return result;
+	}
 	
 	
 	
