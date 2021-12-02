@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ApplyDao">
+	<select id="WkApplyCount" resultType="WkApplyCount" parameterType="String">
+		select count(*) as countall,
+        	count(case when app_sts='001' then 1 end) as applying, 
+        	count(case when app_sts='002' then 1 end) as passdoc,
+        	count(case when app_sts='003' then 1 end) as failed,
+        	count(case when app_sts='004' then 1 end) as pass
+		from apply where user_id = #{mbid}
+	</select>
+	
+		<select id="WkApplyList" resultType="WkApply" parameterType="String">
+		select sub.app_regdate, sub.com_app_sts, re.res_title, com.com_name, co.comm_ctx
+		from (select co2.comm_ctx as com_app_sts, ap2.*
+        		from apply ap2
+        		inner join comm co2
+        		on ap2.app_sts=co2.sub_cat
+        		where ap2.user_id='dmdtla054'
+        		and co2.main_cat='065') sub
+		inner join resume re
+		on sub.user_id=re.user_id
+    	and sub.res_code=re.res_code
+		inner join announce an
+		on sub.anno_code=an.anno_code
+		inner join company com
+		on an.com_id=com.com_id
+		inner join comm co
+		on an.job_tag=co.sub_cat
+		where sub.user_id=#{mbid}
+		and co.main_cat='001'
+	</select>
+	
+	
+</mapper>
