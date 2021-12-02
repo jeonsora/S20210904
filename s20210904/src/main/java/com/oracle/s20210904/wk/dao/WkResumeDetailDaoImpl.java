@@ -22,8 +22,6 @@ public class WkResumeDetailDaoImpl implements WkResumeDetailDao{
 		System.out.println("WkResumeDetailDaoImpl resumeDetailWrite()");
 		int result=0;
 		try {
-			System.out.println("WkResumeDetailDaoImpl resumeDetailWrite() com_name : "+wkResumeDetail.getCom_name_ar()[0]+" "+
-					wkResumeDetail.getUser_id()+" "+wkResumeDetail.getRes_code());
 			result=session.insert("WkResumeDetailWrite", wkResumeDetail);
 			System.out.println("WkResumeDetailDaoImpl resumeDetailWrite() result : "+result);
 		} catch (Exception e) {

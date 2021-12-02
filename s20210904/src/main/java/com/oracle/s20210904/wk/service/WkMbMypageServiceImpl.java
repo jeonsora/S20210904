@@ -114,7 +114,8 @@ public class WkMbMypageServiceImpl implements WkMbMypageService{
 	@Transactional(rollbackFor = {RuntimeException.class ,Exception.class})
 	@Override
 	public int resumeWrite(WkResume wkResume, WkResumeDetail wkResumeDetail) {
-		
+		wkResume.setRes_sts("001");
+		wkResume.setRep_res("0");
 		int resume_result=wkResumeDao.resumeWrite(wkResume);
 		
 		wkResumeDetail.setRes_code(resume_result);
@@ -151,6 +152,13 @@ public class WkMbMypageServiceImpl implements WkMbMypageService{
 		int resume_result=wkResumeDao.resumeDelete(resume);
 		System.out.println("WkMbMypageServiceImpl resumeDelete() result : "+resume_result);
 		return resume_result;
+	}
+
+
+
+	@Override
+	public Resume resumeSelect(Resume resume) {
+		return resume;
 	}
 
 	

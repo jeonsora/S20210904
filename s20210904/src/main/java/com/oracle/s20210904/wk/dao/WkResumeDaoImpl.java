@@ -40,7 +40,7 @@ public class WkResumeDaoImpl implements WkResumeDao{
 		try {
 			max_res_code=session.selectOne("WkResumeMaxRescode", wkResume.getUser_id());
 			wkResume.setRes_code(max_res_code+1);
-			wkResume.setRes_sts("001");
+			
 			result=session.insert("WkResumeWrite", wkResume);
 			result=max_res_code+1;
 		} catch (Exception e) {
