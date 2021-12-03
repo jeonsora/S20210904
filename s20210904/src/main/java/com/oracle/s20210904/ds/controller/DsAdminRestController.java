@@ -46,4 +46,12 @@ public class DsAdminRestController {
 		return result;
 	}
 	
+	@GetMapping(value="maxSubCate")
+	public int maxSubCate(String mainCate) {
+		int result = dsAdminService.maxSubCate(mainCate);
+		result = result+1;
+		return result;
+	}
+	
+	
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.oracle.s20210904.comm.model.Announce;
+import com.oracle.s20210904.comm.model.Comm;
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.comm.model.Member;
@@ -139,6 +140,18 @@ public class DsAdminDaoImpl implements DsAdminDao {
 	@Override
 	public int companyDel(String comId) {
 		int result = session.update("DsCompanyDel",comId);
+		return result;
+	}
+	
+	@Override
+	public List<Comm> getMainCate() {
+		List<Comm> mainCate = session.selectList("DsMainCate");
+		return mainCate;
+	}
+	
+	@Override
+	public int maxSubCate(String mainCate) {
+		int result = session.selectOne("maxSubCate",mainCate);
 		return result;
 	}
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.oracle.s20210904.comm.model.Announce;
+import com.oracle.s20210904.comm.model.Comm;
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.comm.model.Member;
@@ -136,6 +137,18 @@ public class DsAdminServiceImpl implements DsAdminService {
 	@Override
 	public int companyDel(String comId) {
 		int result = dsAdminDao.companyDel(comId);
+		return result;
+	}
+	
+	@Override
+	public List<Comm> getMainCate() {
+		List<Comm> mainCate = dsAdminDao.getMainCate();
+		return mainCate;
+	}
+	
+	@Override
+	public int maxSubCate(String mainCate) {
+		int result = dsAdminDao.maxSubCate(mainCate);
 		return result;
 	}
 }

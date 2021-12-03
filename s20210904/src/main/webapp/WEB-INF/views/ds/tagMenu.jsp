@@ -2,12 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
+<%
+	String context = request.getContextPath();
+%>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/ds/admin.css" type="text/css">
 <link rel="stylesheet" href="css/reset.css" type="text/css">
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <script type="text/javascript">
 	function modalOn() {
@@ -15,6 +19,19 @@
 	}
 	function modalOff() {
 		document.querySelector(".modalBack").style.display="none";
+	}
+	
+	function maxSubCate(VmainCate){
+		$.ajax({
+			url:"<%=context%>/maxSubCate",
+			data:{mainCate : VmainCate},
+			dataType:'text',
+			success:function(data){
+				alert(data+"성공");
+				$('.subCate').val(data);
+				$(".subCate").attr("readonly",true);
+			}
+		});
 	}
 </script>
 <body>
@@ -77,9 +94,16 @@
 
 			<form action="tagInsert">
 				<div class="modal">
-					<span>대번호 <input type="text" name="big" required="required"></span>
-					<span>중번호 <input type="text" name="center" required="required"></span>
-					<span>태그명 <input type="text" name="tagName" required="required"></span>
+
+					<span>대번호 					
+						<select onchange="maxSubCate(this.value)">
+							<c:forEach var="mainCate" items="${mainCate }">
+								<option value="${mainCate.main_cat}">${mainCate.comm_ctx}</option>
+							</c:forEach>
+						</select>
+					</span>
+					<span>중번호 <input type="text" class="subCate" name="subCate" required="required"></span>
+					<span>태그명 <input type="text" class="tagName" name="tagName" required="required"></span>
 					<div class="modalBtn"><input type="submit" value="추가하기"><input type="button" value="취소" onclick="modalOff()"></div>
 				</div>
 			</form>

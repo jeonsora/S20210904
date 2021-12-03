@@ -14,4 +14,14 @@
 		where c.main_cat = b.main_cat and rn between #{start} and #{end}
 	</select>
 	
+	<select id="DsMainCate" resultType="Comm">
+		select * from comm
+		where sub_cat = 999
+	</select>
+	
+	<select id="maxSubCate" parameterType="String" resultType="int">
+		select max(sub_cat) from comm
+		where sub_cat != 999 and main_cat=#{mainCate}
+	</select>
+	
 </mapper>

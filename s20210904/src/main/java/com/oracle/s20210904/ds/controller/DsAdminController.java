@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.oracle.s20210904.comm.model.Announce;
+import com.oracle.s20210904.comm.model.Comm;
 import com.oracle.s20210904.comm.model.Company;
 import com.oracle.s20210904.comm.model.Post;
 import com.oracle.s20210904.comm.model.Member;
@@ -129,6 +130,10 @@ public class DsAdminController {
 		dsComm.setStart(pg.getStart());
 		dsComm.setEnd(pg.getEnd());
 		List<DsComm> dsCommList = dsAdminService.getDsCommList(dsComm);
+		
+		// modal 대분류
+		List<Comm> mainCate = dsAdminService.getMainCate();
+		model.addAttribute("mainCate",mainCate);
 		
 		model.addAttribute("dsCommList",dsCommList);
 		model.addAttribute("ttotCnt",ttotCnt);
