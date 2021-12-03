@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.anno {
+	margin-top: 5%;
+	/*
+	background: #FFD700;
+	*/
+}
+
+.anno_title {
+	align-items: center;
+	text-align: center;
+	/*
+	border: solid black;
+	*/
+}
+
+h2{
+	font-size: 30px;
+	font-style: bold;
+}
+
+table{
+	margin-left: 17%;
+	margin-top: 2%;
+	align-items: center;
+	text-align: center;
+	border: solid black;
+	height: 200px;
+	width: 1025px;
+}
+
+th{
+	text-align: center;
+	border-bottom: solid;
+	height: 40px;
+}
+
+td{
+	text-align: center;
+	height: 40px;
+}
+
+.page{
+	margin-top: 2%;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
