@@ -11,5 +11,4 @@ public class Scrap {
 	private String anno_code;
 	private String user_id;
 	private Date scr_date;
-	private int it_like;
 }

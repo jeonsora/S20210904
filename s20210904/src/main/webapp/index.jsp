@@ -8,10 +8,12 @@
 </head>
 <body>
 
-	<%-- <%response.sendRedirect("CompanyMypage"); %> --%>
-	<%-- <%response.sendRedirect("AdminMain"); %> --%>
-		 <%response.sendRedirect("GmAnnoList"); %> 
+	<%response.sendRedirect("Comjoin"); %>
+
+<%-- 	<%response.sendRedirect("CompanyMypage"); %> --%>
+	 <%response.sendRedirect("AdminMain"); %> 
 	<%-- <%response.sendRedirect("DjAnnoWrite"); %> --%>
+
 
 </body>
 </html>

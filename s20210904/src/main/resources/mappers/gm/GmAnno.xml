@@ -28,105 +28,22 @@
 	</select>
 	
 	<select id="GmCommRecjob" parameterType="ComAnnounce" resultType="Comm">
-		select distinct c.comm_ctx
-		from announce a
-		inner join comm c
-		on a.job_tag = c.sub_cat
+		select comm_ctx
+		from comm
 		where main_cat = 001
-		and a.job_tag = #{job_tag}
+		and sub_cat = #{com.job_tag}
 	</select>
 	
-	<select id="GmCommEmptype" parameterType="ComAnnounce" resultType="Comm">
-		select distinct c.comm_ctx
-		from announce a
-		inner join comm c
-		on a.emp_type = c.sub_cat
+	<select id="GmCommEmptype" resultType="Comm">
+		select comm_ctx
+		from comm
 		where main_cat = 071
-		and a.emp_type = #{emp_type}
-	</select>
-	
-	<select id="GmCommTechtag1" parameterType="ComAnnounce" resultType="Comm">
-		select distinct c.comm_ctx
-		from announce a
-		inner join comm c
-		on a.tech_tag1 = c.sub_cat
-		where main_cat = 002
-		and a.tech_tag1 = #{tech_tag1}
-	</select>
-	
-	<select id="GmCommTechtag2" parameterType="ComAnnounce" resultType="Comm">
-		select distinct c.comm_ctx
-		from announce a
-		inner join comm c
-		on a.tech_tag2 = c.sub_cat
-		where main_cat = 002
-		and a.tech_tag2 = #{tech_tag2}
-	</select>
-	
-	<select id="GmCommCareer" parameterType="ComAnnounce" resultType="Comm">
-		select distinct c.comm_ctx
-		from announce a
-		inner join comm c
-		on a.career = c.sub_cat
-		where main_cat = 070
-		and a.career = #{career}
-	</select>
-	
-	<select id="GmCommComsec" parameterType="ComAnnounce" resultType="Comm">
-		select distinct c.comm_ctx
-		from company b
-		inner join comm c
-		on b.com_sec = c.sub_cat
-		where main_cat = '050'
-		and b.com_sec = #{com_sec}
-	</select>
-	
-	<select id="GmLikeCount" parameterType="Scrap" resultType="int" >
-		select count(*) 
-		from scrap 
-		<!-- where anno_code = #{anno_code} 
-		and user_id = #{user_id}
-		and scr_date = #{scr_date} -->
-	</select>
-	
-	<insert id="GmLikeInsert" parameterType="Scrap">
-		insert into scrap 
-		values (#{anno_code}, #{user_id}, #{it_like}, sysdate)
-	</insert>
-	
-	<select id="GmLikeGetInfo" parameterType="Scrap" resultType="int">
-		select it_like 
-		from scrap 
-		where anno_code = #{anno_code} 
-		and user_id = #{user_id}
-	</select>
-	
-	<update id="GmLikeUpdate" parameterType="Scrap">
-		
-	</update>
-	
-	<select id="GmResumeTotal" resultType="int">
-		select count(*) from resume
-	</select>
-	
-	<select id="GmResumeList" parameterType="Resume" resultType="Resume">
-		select *
-		from
-		(
-		  select rownum rn, a.*
-		  from (select user_id, res_title, res_date from resume where user_id = 'siasia54') a
-		)
-		where rn between #{start} and #{end}
-	</select>
-	
-	<select id="GmSelResume" parameterType="Resume" resultType="Resume">
-		select * 
-		from resume 
-		where user_id = #{user_id} 
-		and res_code = #{res_code}
+		and sub_Cat = 001
 	</select>
 	
 	
+	
+
 
 
 </mapper>
