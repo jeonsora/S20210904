@@ -40,4 +40,9 @@ public class Resume implements Serializable{
 	private String res_tag3;
 	private String res_etc_link;
 	private String res_etc_file;
+	
+	// 조회용
+	private String pageNum;
+	private int start;
+	private int end;
 }
