@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<settings> 
+    	<setting name="cacheEnabled" value="false" />
+    	<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
 	<typeAliases>
 		<typeAlias alias="Announce" type="com.oracle.s20210904.comm.model.Announce"/>
 		<typeAlias alias="Apply" type="com.oracle.s20210904.comm.model.Apply"/>
@@ -15,9 +19,14 @@
 		<typeAlias alias="Scrap" type="com.oracle.s20210904.comm.model.Scrap"/>
 		<typeAlias alias="Member" type="com.oracle.s20210904.comm.model.Member"/>
 		<typeAlias alias="ComAnnounce" type="com.oracle.s20210904.comm.model.ComAnnounce"/>
+		<typeAlias alias="WkApplyCount" type="com.oracle.s20210904.wk.model.WkApplyCount"/>
+		<typeAlias alias="WkResume" type="com.oracle.s20210904.wk.model.WkResume"/>
+		<typeAlias alias="WkApply" type="com.oracle.s20210904.wk.model.WkApply"/>
+		<typeAlias alias="WkScrap" type="com.oracle.s20210904.wk.model.WkScrap"/>
+		<typeAlias alias="WkResumeDetail" type="com.oracle.s20210904.wk.model.WkResumeDetail"/>
+		<typeAlias alias="AnnounceCnt" type="com.oracle.s20210904.ds.model.AnnounceCnt"/>
 		<typeAlias alias="DsComm" type="com.oracle.s20210904.ds.model.DsComm"/>
 		<typeAlias alias="AnnounceCnt" type="com.oracle.s20210904.ds.model.AnnounceCnt"/>
 		
-
 	</typeAliases>
 </configuration>

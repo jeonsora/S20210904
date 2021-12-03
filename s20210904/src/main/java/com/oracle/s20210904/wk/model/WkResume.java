@@ -1,4 +1,4 @@
-package com.oracle.s20210904.comm.model;
+package com.oracle.s20210904.wk.model;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -6,22 +6,27 @@ import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name = "Resume")
-@IdClass(Resume.class)
-public class Resume implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+//@Entity(name = "WkResume")
+//@Table(name = "resume")
+//@IdClass(WkResume.class)
+public class WkResume{
+//	/**
+//	 * 
+//	 */
+//	private static final long serialVersionUID = 1L;
 	@Id
 	private String user_id;
-	@Id
+//	@Id
 	private int res_code;
 	private String res_sts;
 	private String res_title;
@@ -41,8 +46,17 @@ public class Resume implements Serializable{
 	private String res_etc_link;
 	private String res_etc_file;
 	
-	// 조회용
-	private String pageNum;
-	private int start;
-	private int end;
+	
+//	@ManyToOne
+//	@JoinColumn
+//	private Comm comm;
+	@Transient
+	private String comm_ctx;
+	@Transient
+	private String main_cat;
+	@Transient
+	private String sub_cat;
+	
+//	WkResumeDetail
+	
 }

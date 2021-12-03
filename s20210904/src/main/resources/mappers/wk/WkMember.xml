@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberDao">
+	<update id="WkMemberUpdate" parameterType="Member">
+		update member
+		set user_pw=#{user_pw}, user_name=#{user_name},user_sex=#{user_sex},
+			user_brh=#{user_brh},user_edu=#{user_edu},user_addr=#{user_addr},
+			user_tel=#{user_tel},user_email=#{user_email},user_img=#{user_img}
+		where user_id=#{user_id}
+	</update>
+	
+	
+</mapper>

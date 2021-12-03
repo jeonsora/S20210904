@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ResumeDao">
+
+	
+	<insert id="WkResumeDetailWrite" parameterType="WkResumeDetail">
+		<foreach collection="ResumeDetailList" item="items" index="index" open="INSERT ALL " close="SELECT * FROM DUAL">
+			into S20210904.RESUME_DETAIL (user_id,res_code,car_code,com_name,emp_date,emp_dept,task) 
+			values (#{user_id},#{res_code},#{items.car_code},#{items.com_name},null,#{items.emp_dept},#{items.task})
+		</foreach>
+	</insert>
+	
+	<delete id="WkResumeDetailDelete" parameterType="Resume">
+		delete from S20210904.RESUME_DETAIL
+		where user_id=#{user_id}
+		and res_code=#{res_code}
+	</delete>
+	
+	
+</mapper>
